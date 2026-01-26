@@ -1,15 +1,22 @@
 <template>
   <div class="video-player">
     <div class="video-container">
+      <Transition name="fade">
+        <div v-if="isLoading" class="video-loading">
+          <ProgressSpinner strokeWidth="4" />
+        </div>
+      </Transition>
       <video
         v-if="useVideo && videoSrc && !videoError"
         ref="videoElement"
         :src="videoSrc"
         class="sign-video"
+        :class="{ 'media-hidden': isLoading }"
         autoplay
         loop
         muted
         playsinline
+        @loadeddata="handleMediaLoaded"
         @error="handleVideoError"
       />
       <img
@@ -17,20 +24,25 @@
         :src="gifSrc"
         :alt="alt"
         class="sign-gif"
+        :class="{ 'media-hidden': isLoading }"
+        @load="handleMediaLoaded"
         @error="handleGifError"
       />
-      <div v-else class="video-placeholder">
+      <div v-else-if="!isLoading" class="video-placeholder">
         <i class="pi pi-play-circle"></i>
         <p>Video not available</p>
       </div>
     </div>
 
-    <p v-if="caption" class="video-caption">{{ caption }}</p>
+    <Transition name="fade" mode="out-in">
+      <p v-if="caption" class="video-caption" :key="caption">{{ caption }}</p>
+    </Transition>
   </div>
 </template>
 
 <script setup>
 import { ref, watch, onMounted } from 'vue'
+import ProgressSpinner from 'primevue/progressspinner'
 
 const props = defineProps({
   videoSrc: {
@@ -58,21 +70,30 @@ const props = defineProps({
 const videoElement = ref(null)
 const videoError = ref(false)
 const gifError = ref(false)
+const isLoading = ref(true)
 
 const handleVideoError = () => {
   videoError.value = true
+  isLoading.value = false
 }
 
 const handleGifError = () => {
   gifError.value = true
+  isLoading.value = false
+}
+
+const handleMediaLoaded = () => {
+  isLoading.value = false
 }
 
 watch(() => props.videoSrc, () => {
   videoError.value = false
+  isLoading.value = true
 })
 
 watch(() => props.gifSrc, () => {
   gifError.value = false
+  isLoading.value = true
 })
 
 onMounted(() => {
@@ -105,6 +126,20 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.video-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  z-index: 2;
 }
 
 .sign-video,
@@ -113,6 +148,12 @@ onMounted(() => {
   height: 100%;
   object-fit: contain;
   background: #000;
+  transition: opacity 0.3s ease;
+}
+
+.sign-video.media-hidden,
+.sign-gif.media-hidden {
+  opacity: 0;
 }
 
 .video-placeholder {
@@ -155,5 +196,27 @@ onMounted(() => {
   .video-caption {
     font-size: 1.3rem;
   }
+}
+
+/* Fade transition */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fade-enter-from {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.fade-leave-to {
+  opacity: 0;
+  transform: scale(1.02);
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+  transform: scale(1);
 }
 </style>

@@ -19,23 +19,36 @@
       <main class="main-content">
         <div v-if="activeItem" class="item-display">
           <!-- Item Name -->
-          <div class="item-header">
-            <h1 class="item-name">
-              {{ getItemName(theme.id, activeItem.id) }}
-            </h1>
-            <p v-if="activeItem.description" class="item-description">
-              {{ activeItem.description }}
-            </p>
-          </div>
+          <Transition name="fade" mode="out-in">
+            <div class="item-header" :key="activeItem.id">
+              <h1 class="item-name">
+                {{ getItemName(theme.id, activeItem.id) }}
+              </h1>
+              <p v-if="activeItem.description" class="item-description">
+                {{ activeItem.description }}
+              </p>
+            </div>
+          </Transition>
 
           <!-- Item Image -->
           <div class="item-image-video-wrapper">
             <div class="item-image-container">
-              <img
-                :src="activeItem.image"
-                :alt="activeItem.name"
-                class="item-image"
-              />
+              <Transition name="fade">
+                <div v-if="imageLoading" class="media-loading">
+                  <ProgressSpinner strokeWidth="4" />
+                </div>
+              </Transition>
+              <Transition name="fade" mode="out-in">
+                <img
+                  :src="activeItem.image"
+                  :alt="activeItem.name"
+                  class="item-image"
+                  :class="{ 'image-hidden': imageLoading }"
+                  :key="activeItem.id"
+                  @load="onImageLoad"
+                  @error="onImageLoad"
+                />
+              </Transition>
             </div>
 
             <!-- Sign Language Video -->
@@ -44,6 +57,7 @@
               :gif-src="activeItem.signGif"
               :alt="`Sign language for ${activeItem.name}`"
               :caption="`Sign: ${activeItem.name}`"
+              :key="activeItem.id"
             />
           </div>
 
@@ -100,6 +114,7 @@ const { t } = useI18n();
 
 const theme = ref(null);
 const activeItemId = ref("");
+const imageLoading = ref(true);
 
 // Load theme data
 const loadTheme = () => {
@@ -142,8 +157,13 @@ const hasNext = computed(() => {
 });
 
 const selectItem = (itemId) => {
+  imageLoading.value = true;
   activeItemId.value = itemId;
   router.replace({ query: { itemId } });
+};
+
+const onImageLoad = () => {
+  imageLoading.value = false;
 };
 
 const goToPrevious = () => {
@@ -290,12 +310,32 @@ const getItemName = (themeId, itemId) => {
   overflow: hidden;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
   border: 6px solid white;
+  position: relative;
+  background: #f5f5f5;
+}
+
+.media-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  z-index: 2;
 }
 
 .item-image {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.item-image.image-hidden {
+  opacity: 0;
 }
 
 .navigation-buttons {
@@ -364,6 +404,28 @@ const getItemName = (themeId, itemId) => {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Fade transition for item changes */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fade-enter-from {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.fade-leave-to {
+  opacity: 0;
+  transform: scale(1.02);
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+  transform: scale(1);
 }
 
 @media (max-width: 1024px) {
