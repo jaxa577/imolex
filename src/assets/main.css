@@ -1,0 +1,9 @@
+@import "./base.css";
+
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
