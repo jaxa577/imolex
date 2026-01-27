@@ -1,12 +1,52 @@
 <template>
   <div v-if="theme" class="theme-detail-page">
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+      <Button
+        icon="pi pi-arrow-left"
+        class="mobile-back-button"
+        rounded
+        @click="goBack"
+        :aria-label="$t('theme.backButton')"
+      />
+      <h2 class="mobile-theme-title">{{ getThemeName(theme.id) }}</h2>
+      <Button
+        icon="pi pi-bars"
+        class="burger-button"
+        rounded
+        @click="toggleMobileMenu"
+        :aria-label="$t('theme.menu')"
+      />
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <Transition name="fade">
+      <div
+        v-if="isMobileMenuOpen"
+        class="mobile-menu-overlay"
+        @click="closeMobileMenu"
+      ></div>
+    </Transition>
+
+    <!-- Mobile Slide Menu -->
+    <Transition name="slide-menu">
+      <aside v-if="isMobileMenuOpen" class="mobile-sidebar">
+        <SideMenu
+          :theme="theme"
+          :active-item-id="activeItemId"
+          @select="handleMobileSelect"
+          @back="goBack"
+        />
+      </aside>
+    </Transition>
+
     <div class="language-switcher-container">
       <LanguageSwitcher />
     </div>
 
     <div class="content-wrapper">
-      <!-- Left Menu -->
-      <aside class="sidebar">
+      <!-- Left Menu (Desktop Only) -->
+      <aside class="sidebar desktop-only">
         <SideMenu
           :theme="theme"
           :active-item-id="activeItemId"
@@ -24,8 +64,8 @@
               <h1 class="item-name">
                 {{ getItemName(theme.id, activeItem.id) }}
               </h1>
-              <p v-if="activeItem.description" class="item-description">
-                {{ activeItem.description }}
+              <p class="item-description">
+                {{ getItemDescription(theme.id, activeItem.id) }}
               </p>
             </div>
           </Transition>
@@ -55,10 +95,17 @@
             <VideoPlayer
               :video-src="activeItem.signVideo"
               :gif-src="activeItem.signGif"
-              :alt="`Sign language for ${activeItem.name}`"
-              :caption="`Sign: ${activeItem.name}`"
+              :alt="`Sign language for ${getItemName(theme.id, activeItem.id)}`"
+              :caption="getSignCaption(theme.id, activeItem.id)"
               :key="activeItem.id"
             />
+          </div>
+
+          <!-- Progress Indicator (Mobile) -->
+          <div class="progress-indicator mobile-only">
+            <span class="progress-text"
+              >{{ currentIndex + 1 }} / {{ theme.items.length }}</span
+            >
           </div>
 
           <!-- Navigation Buttons -->
@@ -98,7 +145,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from "vue";
+import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useI18n } from "vue-i18n";
 import Button from "primevue/button";
@@ -115,6 +162,7 @@ const { t } = useI18n();
 const theme = ref(null);
 const activeItemId = ref("");
 const imageLoading = ref(true);
+const isMobileMenuOpen = ref(false);
 
 // Load theme data
 const loadTheme = () => {
@@ -129,6 +177,10 @@ const loadTheme = () => {
 
 onMounted(() => {
   loadTheme();
+});
+
+onUnmounted(() => {
+  document.body.style.overflow = "";
 });
 
 watch(
@@ -155,6 +207,22 @@ const hasPrevious = computed(() => currentIndex.value > 0);
 const hasNext = computed(() => {
   return theme.value && currentIndex.value < theme.value.items.length - 1;
 });
+
+// Mobile menu functions
+const toggleMobileMenu = () => {
+  isMobileMenuOpen.value = !isMobileMenuOpen.value;
+  document.body.style.overflow = isMobileMenuOpen.value ? "hidden" : "";
+};
+
+const closeMobileMenu = () => {
+  isMobileMenuOpen.value = false;
+  document.body.style.overflow = "";
+};
+
+const handleMobileSelect = (itemId) => {
+  selectItem(itemId);
+  closeMobileMenu();
+};
 
 const selectItem = (itemId) => {
   imageLoading.value = true;
@@ -192,6 +260,8 @@ const themeToItemCategory = {
   clothes: "clothes",
   colors: "colors",
   dishes: "dishes",
+  fruits: "fruits",
+  family: "family",
   food: "food",
   furniture: "furniture",
   "household-appliances": "householdAppliances",
@@ -203,6 +273,33 @@ const themeToItemCategory = {
   transports: "transports",
   vegetables: "vegetables",
   "wild-animals": "wildAnimals",
+};
+
+// Theme name mapping
+const themeNameMap = {
+  "action-words": "themes.actionWords",
+  animals: "themes.animals",
+  "body-parts": "themes.bodyParts",
+  clothes: "themes.clothes",
+  colors: "themes.colors",
+  dishes: "themes.dishes",
+  family: "themes.family",
+  food: "themes.food",
+  fruits: "themes.fruits",
+  furniture: "themes.furniture",
+  "household-appliances": "themes.householdAppliances",
+  insects: "themes.insects",
+  "natural-phenomena": "themes.naturalPhenomena",
+  occupations: "themes.occupations",
+  places: "themes.places",
+  "school-supplies": "themes.schoolSupplies",
+  transports: "themes.transport",
+  vegetables: "themes.vegetables",
+  "wild-animals": "themes.wildAnimals",
+};
+
+const getThemeName = (themeId) => {
+  return t(themeNameMap[themeId] || "themes.animals");
 };
 
 const getItemName = (themeId, itemId) => {
@@ -219,14 +316,113 @@ const getItemName = (themeId, itemId) => {
   const item = theme.value?.items?.find((i) => i.id === itemId);
   return item?.name || itemId;
 };
+
+const getItemDescription = (themeId, itemId) => {
+  const itemName = getItemName(themeId, itemId);
+  return t("theme.learnAbout", { name: itemName });
+};
+
+const getSignCaption = (themeId, itemId) => {
+  const itemName = getItemName(themeId, itemId);
+  return t("theme.signCaption", { name: itemName });
+};
 </script>
 
 <style scoped>
 .theme-detail-page {
   min-height: 100vh;
+  min-height: 100dvh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 20px;
   position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Mobile Header */
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1001;
+  padding: 8px 16px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-back-button,
+.burger-button {
+  width: 44px;
+  height: 44px;
+  font-size: 1.2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  border: none !important;
+  flex-shrink: 0;
+}
+
+.mobile-back-button:hover,
+.burger-button:hover {
+  transform: scale(1.05);
+}
+
+.mobile-theme-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 12px;
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1002;
+}
+
+/* Mobile Sidebar */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 85%;
+  max-width: 320px;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 1003;
+  overflow: hidden;
+}
+
+/* Slide menu transition */
+.slide-menu-enter-active,
+.slide-menu-leave-active {
+  transition: transform 0.3s ease;
+}
+
+.slide-menu-enter-from,
+.slide-menu-leave-to {
+  transform: translateX(-100%);
+}
+
+.slide-menu-enter-to,
+.slide-menu-leave-from {
+  transform: translateX(0);
 }
 
 .language-switcher-container {
@@ -253,6 +449,7 @@ const getItemName = (themeId, itemId) => {
   grid-template-columns: 320px 1fr;
   gap: 24px;
   min-height: calc(100vh - 40px);
+  min-height: calc(100dvh - 40px);
 }
 
 .sidebar {
@@ -260,6 +457,15 @@ const getItemName = (themeId, itemId) => {
   top: 20px;
   height: fit-content;
   max-height: calc(100vh - 40px);
+  max-height: calc(100dvh - 40px);
+}
+
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
 }
 
 .main-content {
@@ -293,15 +499,18 @@ const getItemName = (themeId, itemId) => {
 .item-description {
   font-size: 1.4rem;
   color: #666;
-  margin: 0;  
+  margin: 0;
   line-height: 1.6;
+  font-style: italic;
 }
+
 .item-image-video-wrapper {
   display: flex;
   gap: 32px;
-  /* flex-wrap: wrap; */
   justify-content: center;
+  width: 100%;
 }
+
 .item-image-container {
   width: 100%;
   max-width: 500px;
@@ -338,10 +547,26 @@ const getItemName = (themeId, itemId) => {
   opacity: 0;
 }
 
+/* Progress Indicator */
+.progress-indicator {
+  background: rgba(102, 126, 234, 0.1);
+  padding: 8px 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.progress-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #667eea;
+}
+
 .navigation-buttons {
   display: flex;
   gap: 24px;
   margin-top: 24px;
+  width: 100%;
+  max-width: 600px;
 }
 
 .nav-button {
@@ -350,6 +575,7 @@ const getItemName = (themeId, itemId) => {
   border-radius: 16px;
   border: none;
   transition: all 0.3s ease;
+  flex: 1;
 }
 
 .prev-button {
@@ -391,25 +617,17 @@ const getItemName = (themeId, itemId) => {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  min-height: 100dvh;
   color: white;
   font-size: 1.5rem;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Fade transition for item changes */
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .fade-enter-from {
@@ -428,15 +646,32 @@ const getItemName = (themeId, itemId) => {
   transform: scale(1);
 }
 
+/* Tablet breakpoint */
 @media (max-width: 1024px) {
   .content-wrapper {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 
-  .sidebar {
-    position: static;
-    max-height: none;
+  .sidebar.desktop-only {
+    display: none;
+  }
+
+  .mobile-header {
+    display: flex;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .theme-detail-page {
+    padding: 76px 16px 16px;
+  }
+
+  .language-switcher-container {
+    top: 70px;
+    right: 16px;
   }
 
   .main-content {
@@ -447,31 +682,153 @@ const getItemName = (themeId, itemId) => {
     font-size: 2.5rem;
   }
 
-  .navigation-buttons {
+  .item-image-video-wrapper {
     flex-direction: column;
-    width: 100%;
+    align-items: center;
   }
 
-  .nav-button {
-    width: 100%;
+  .item-image-container {
+    max-width: 400px;
   }
 }
 
+/* Phone breakpoint */
 @media (max-width: 768px) {
   .theme-detail-page {
-    padding: 12px;
+    padding: 70px 12px 12px;
+  }
+
+  .mobile-header {
+    height: 56px;
+    padding: 6px 12px;
+  }
+
+  .mobile-theme-title {
+    font-size: 1.1rem;
+  }
+
+  .language-switcher-container {
+    top: 64px;
+    right: 12px;
   }
 
   .main-content {
-    padding: 20px;
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .item-display {
+    gap: 20px;
   }
 
   .item-name {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
   }
 
   .item-description {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .item-image-container {
+    max-width: 280px;
+    border-width: 4px;
+    border-radius: 16px;
+  }
+
+  .navigation-buttons {
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .nav-button {
+    font-size: 1.1rem;
+    padding: 14px 20px;
+    border-radius: 12px;
+  }
+
+  .nav-button :deep(.p-button-label) {
+    display: none;
+  }
+
+  .nav-button :deep(.p-button-icon) {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+}
+
+/* Small phone breakpoint */
+@media (max-width: 480px) {
+  .theme-detail-page {
+    padding: 66px 8px 8px;
+  }
+
+  .mobile-header {
+    padding: 6px 8px;
+  }
+
+  .mobile-back-button,
+  .burger-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .mobile-theme-title {
+    font-size: 1rem;
+  }
+
+  .language-switcher-container {
+    top: 62px;
+    right: 8px;
+  }
+
+  .main-content {
+    padding: 12px;
+  }
+
+  .item-name {
+    font-size: 1.5rem;
+  }
+
+  .item-description {
+    font-size: 0.9rem;
+  }
+
+  .item-image-container {
+    max-width: 240px;
+  }
+
+  .navigation-buttons {
+    gap: 8px;
+  }
+
+  .nav-button {
+    padding: 12px 16px;
+  }
+}
+
+/* Landscape phone */
+@media (max-height: 500px) and (orientation: landscape) {
+  .theme-detail-page {
+    padding: 66px 16px 16px;
+  }
+
+  .item-display {
+    gap: 16px;
+  }
+
+  .item-image-video-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .item-image-container {
+    max-width: 200px;
+  }
+
+  .navigation-buttons {
+    margin-top: 12px;
   }
 }
 </style>

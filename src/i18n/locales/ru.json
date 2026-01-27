@@ -13,7 +13,10 @@
     "previous": "Предыдущий",
     "next": "Следующий",
     "videoNotAvailable": "Видео недоступно",
-    "selectItem": "Выберите элемент из меню"
+    "selectItem": "Выберите элемент из меню",
+    "menu": "Меню",
+    "signCaption": "Жест: {name}",
+    "learnAbout": "Учимся показывать '{name}'"
   },
   "games": {
     "title": "Обучающие игры",
@@ -66,11 +69,12 @@
   },
   "themes": {
     "actionWords": "Действия",
-    "animals": "Животные",
+    "animals": "Домашние Животные",
     "bodyParts": "Части тела",
     "clothes": "Одежда",
     "colors": "Цвета",
     "dishes": "Посуда",
+    "family": "Семья",
     "food": "Еда",
     "furniture": "Мебель",
     "householdAppliances": "Бытовая техника",
@@ -80,6 +84,7 @@
     "places": "Места",
     "schoolSupplies": "Школьные принадлежности",
     "transport": "Транспорт",
+    "fruits": "Фрукты",
     "vegetables": "Овощи",
     "wildAnimals": "Дикие животные"
   },
@@ -129,6 +134,18 @@
       "nose": "Нос",
       "tongue": "Язык"
     },
+    "fruits": {
+      "apple": "Яблоко",
+      "banana": "Банан",
+      "cherry": "Вишня",
+      "grape": "Виноград",
+      "limon": "Лимон",
+      "orange": "Апельсин",
+      "peach": "Персик",
+      "pear": "Груша",
+      "apricote": "Абрикос",
+      "pomegranate": "Гранат"
+    },
     "clothes": {
       "boots": "Сапоги",
       "dress": "Платье",
@@ -165,6 +182,16 @@
       "plate": "Тарелка",
       "spoon-knife-fork": "Столовые приборы",
       "teapot": "Чайник"
+    },
+    "family": {
+      "mother": "Мама",
+      "father": "Папа",
+      "brother": "Брат",
+      "sister": "Сестра",
+      "son": "Сын",
+      "daughter": "Дочь",
+      "grandmother": "Бабушка",
+      "grandfather": "Дедушка"
     },
     "food": {
       "bread": "Хлеб",

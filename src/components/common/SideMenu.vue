@@ -158,8 +158,9 @@ const getItemName = (themeId, itemId) => {
   overflow-y: auto;
   overflow-x: hidden;
   padding: 16px;
-  min-height: 0; /* Important for flex scrolling */
-  max-height: 100%; /* Prevent overflow */
+  min-height: 0;
+  max-height: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 .menu-item {
@@ -179,6 +180,10 @@ const getItemName = (themeId, itemId) => {
   background: rgba(255, 255, 255, 0.8);
   transform: translateX(8px);
   border-color: white;
+}
+
+.menu-item:active {
+  transform: translateX(4px) scale(0.98);
 }
 
 .menu-item.active {
@@ -206,6 +211,7 @@ const getItemName = (themeId, itemId) => {
 
 .menu-item-text {
   flex: 1;
+  min-width: 0;
 }
 
 .item-name {
@@ -213,6 +219,9 @@ const getItemName = (themeId, itemId) => {
   font-weight: bold;
   color: #333;
   display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Custom scrollbar */
@@ -234,26 +243,92 @@ const getItemName = (themeId, itemId) => {
   background: rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 768px) {
+/* Mobile styles - when used in mobile sidebar */
+@media (max-width: 1024px) {
+  .side-menu {
+    height: 100dvh;
+    border-radius: 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
   .menu-header {
-    padding: 16px;
+    padding: 20px 16px;
+  }
+
+  .back-button {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
   }
 
   .theme-title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
-  .menu-item {
+  .menu-items {
     padding: 12px;
   }
 
+  .menu-item {
+    padding: 14px;
+    margin-bottom: 10px;
+    gap: 14px;
+  }
+
+  .menu-item:hover {
+    transform: none;
+  }
+
+  .menu-item.active {
+    transform: none;
+  }
+
   .menu-item-image {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
   }
 
   .item-name {
     font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-header {
+    padding: 16px 12px;
+  }
+
+  .back-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .theme-title {
+    font-size: 1.3rem;
+  }
+
+  .menu-items {
+    padding: 10px;
+  }
+
+  .menu-item {
+    padding: 12px;
+    margin-bottom: 8px;
+    gap: 12px;
+    border-radius: 12px;
+  }
+
+  .menu-item-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+  }
+
+  .item-name {
+    font-size: 1.1rem;
   }
 }
 </style>

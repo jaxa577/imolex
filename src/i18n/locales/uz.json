@@ -13,7 +13,10 @@
     "previous": "Oldingi",
     "next": "Keyingi",
     "videoNotAvailable": "Video mavjud emas",
-    "selectItem": "Menyudan elementni tanlang"
+    "selectItem": "Menyudan elementni tanlang",
+    "menu": "Menyu",
+    "signCaption": "Imo-ishora: {name}",
+    "learnAbout": "'{name}' imo-ishorasini o'rganing"
   },
   "games": {
     "title": "O'quv o'yinlari",
@@ -66,11 +69,12 @@
   },
   "themes": {
     "actionWords": "Harakatlar",
-    "animals": "Hayvonlar",
+    "animals": "Uy Hayvonlari",
     "bodyParts": "Tana qismlari",
     "clothes": "Kiyimlar",
     "colors": "Ranglar",
     "dishes": "Idishlar",
+    "family": "Oila",
     "food": "Ovqatlar",
     "furniture": "Mebellar",
     "householdAppliances": "Maishiy texnika",
@@ -78,6 +82,7 @@
     "naturalPhenomena": "Tabiat hodisalari",
     "occupations": "Kasblar",
     "places": "Joylar",
+    "fruits": "Mevalar",
     "schoolSupplies": "Maktab buyumlari",
     "transport": "Transport",
     "vegetables": "Sabzavotlar",
@@ -129,6 +134,18 @@
       "nose": "Burun",
       "tongue": "Til"
     },
+    "fruits": {
+      "apple": "Olma",
+      "banana": "Banan",
+      "cherry": "Olcha",
+      "grape": "Uzum",
+      "limon": "Limon",
+      "orange": "Apelsin",
+      "peach": "Shaftoli",
+      "pear": "Nok",
+      "apricote": "Shaftoli",
+      "pomegranate": "Anor"
+    },
     "clothes": {
       "boots": "Etik",
       "dress": "Ko'ylak",
@@ -161,10 +178,20 @@
       "cup": "Piyola",
       "fork": "Vilka",
       "glass": "Stakan",
-      "pan": "Skovoroda",
+      "pan": "Tova",
       "plate": "Likop",
       "spoon-knife-fork": "Dasturxon anjomlari",
       "teapot": "Choynak"
+    },
+    "family": {
+      "mother": "Ona",
+      "father": "Ota",
+      "brother": "Aka/Uka",
+      "sister": "Opa/Singil",
+      "son": "O'g'il",
+      "daughter": "Qiz",
+      "grandmother": "Buvi",
+      "grandfather": "Bobo"
     },
     "food": {
       "bread": "Non",

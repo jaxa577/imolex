@@ -14,6 +14,10 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Allow vertical scroll, prevent horizontal */
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
 }
 
 body {
@@ -22,7 +26,12 @@ body {
   line-height: 1.6;
   color: #333;
   background: #f5f5f5;
+  /* Only hide horizontal overflow */
   overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100%;
+  /* Improve touch scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Typography */
@@ -51,6 +60,11 @@ p, span, div {
   cursor: pointer;
   border: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* Prevent text selection on double tap */
+  -webkit-user-select: none;
+  user-select: none;
+  /* Remove tap highlight on mobile */
+  -webkit-tap-highlight-color: transparent;
 }
 
 .p-button:hover:not(:disabled) {
@@ -59,7 +73,7 @@ p, span, div {
 }
 
 .p-button:active:not(:disabled) {
-  transform: translateY(0);
+  transform: translateY(0) scale(0.98);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -117,8 +131,8 @@ p, span, div {
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -133,6 +147,14 @@ p, span, div {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* Hide scrollbar on mobile but keep functionality */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
 }
 
 /* Utility Classes */
@@ -154,6 +176,15 @@ p, span, div {
 .p-2 { padding: 1rem; }
 .p-3 { padding: 1.5rem; }
 .p-4 { padding: 2rem; }
+
+/* Safe area insets for notched phones */
+.safe-area-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
 
 /* Animations */
 @keyframes fadeIn {
@@ -234,6 +265,8 @@ p, span, div {
 a, button {
   min-width: 44px;
   min-height: 44px;
+  /* Remove tap highlight on mobile */
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Focus styles for keyboard navigation */
@@ -245,6 +278,18 @@ textarea:focus {
   outline: 3px solid #667eea;
   outline-offset: 2px;
   border-radius: 8px;
+}
+
+/* Focus visible - only show focus on keyboard navigation */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #667eea;
+  outline-offset: 2px;
 }
 
 /* Disable text selection for game elements */
@@ -260,6 +305,9 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  /* Prevent image dragging */
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 
 /* Video elements */
@@ -269,10 +317,33 @@ video {
   display: block;
 }
 
+/* Touch-friendly interactions */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  .p-button:hover:not(:disabled) {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Make tap feedback instant */
+  .p-button:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+}
+
 /* Responsive breakpoints */
 @media (max-width: 1024px) {
   html {
     font-size: 15px;
+  }
+
+  .p-card {
+    border-radius: 16px;
+  }
+
+  .p-progress-spinner {
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -282,14 +353,63 @@ video {
   }
 
   .p-button {
-    padding: 10px 20px;
+    padding: 10px 18px;
     font-size: 1.1rem;
+    border-radius: 10px;
+  }
+
+  .p-card {
+    border-radius: 14px;
+  }
+
+  .p-card .p-card-content {
+    padding: 1rem;
+  }
+
+  .p-card .p-card-title {
+    font-size: 1.5rem;
+  }
+
+  .p-progress-spinner {
+    width: 50px;
+    height: 50px;
   }
 }
 
 @media (max-width: 480px) {
   html {
     font-size: 13px;
+  }
+
+  .p-button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 8px;
+  }
+
+  .p-card {
+    border-radius: 12px;
+  }
+
+  .p-card .p-card-content {
+    padding: 0.75rem;
+  }
+
+  .p-card .p-card-title {
+    font-size: 1.3rem;
+  }
+
+  .p-progress-spinner {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .p-button {
+    padding: 8px 16px;
+    font-size: 1rem;
   }
 }
 
@@ -307,9 +427,28 @@ video {
 
 /* Reduced motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .p-button {
+    border: 2px solid currentColor;
+  }
+
+  .p-card {
+    border: 2px solid #333;
+  }
+}
+
+/* Dark mode support (if needed in future) */
+@media (prefers-color-scheme: dark) {
+  /* Placeholder for dark mode styles */
 }

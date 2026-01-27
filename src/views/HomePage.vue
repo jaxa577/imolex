@@ -54,9 +54,12 @@ const goToGames = () => {
 <style scoped>
 .home-page {
   min-height: 100vh;
+  min-height: 100dvh;
   padding: 40px 20px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .language-switcher-container {
@@ -71,6 +74,7 @@ const goToGames = () => {
   text-align: center;
   margin-bottom: 48px;
   animation: fadeInDown 0.8s ease-out;
+  padding-top: 20px;
 }
 
 .main-title {
@@ -98,8 +102,8 @@ const goToGames = () => {
 
 .themes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
   max-width: 1400px;
   margin: 0 auto 48px;
   animation: fadeInUp 1s ease-out;
@@ -107,7 +111,8 @@ const goToGames = () => {
 
 .games-section {
   text-align: center;
-  margin-top: 64px;
+  margin-top: 48px;
+  padding-bottom: 40px;
   animation: fadeIn 1.2s ease-out;
 }
 
@@ -165,39 +170,103 @@ const goToGames = () => {
   }
 }
 
+/* Tablet breakpoint */
+@media (max-width: 1024px) {
+  .themes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Phone breakpoint */
 @media (max-width: 768px) {
   .home-page {
-    padding: 24px 16px;
+    padding: 20px 16px;
+  }
+
+  .page-header {
+    margin-bottom: 32px;
+    padding-top: 40px;
   }
 
   .main-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
   }
 
   .main-title i {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .subtitle {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    padding: 0 10px;
   }
 
   .themes-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 16px;
+  }
+
+  .games-section {
+    margin-top: 32px;
+    padding-bottom: 24px;
   }
 
   .games-button {
-    font-size: 1.6rem;
-    padding: 20px 40px;
+    font-size: 1.4rem;
+    padding: 18px 36px;
   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+/* Small phone breakpoint */
+@media (max-width: 480px) {
+  .home-page {
+    padding: 16px 12px;
+  }
+
+  .page-header {
+    margin-bottom: 24px;
+    padding-top: 36px;
+  }
+
+  .main-title {
+    font-size: 1.6rem;
+    gap: 8px;
+  }
+
+  .main-title i {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .language-switcher-container {
+    top: 12px;
+    right: 12px;
+  }
+
   .themes-grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .games-section {
+    margin-top: 24px;
+  }
+
+  .games-button {
+    font-size: 1.2rem;
+    padding: 16px 32px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+  .themes-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 </style>
