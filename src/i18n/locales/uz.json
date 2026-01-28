@@ -111,6 +111,7 @@
     },
     "animals": {
       "cat": "Mushuk",
+      "camel": "Tuya",
       "chicken": "Tovuq",
       "cock": "Xo'roz",
       "cow": "Sigir",
@@ -143,8 +144,9 @@
       "orange": "Apelsin",
       "peach": "Shaftoli",
       "pear": "Nok",
-      "apricote": "Shaftoli",
-      "pomegranate": "Anor"
+      "apricot": "O'rik",
+      "pomegranate": "Anor",
+      "watermelon": "Tarvuz"
     },
     "clothes": {
       "boots": "Etik",
@@ -180,7 +182,7 @@
       "glass": "Stakan",
       "pan": "Tova",
       "plate": "Likop",
-      "spoon-knife-fork": "Dasturxon anjomlari",
+      "spoon": "Qoshiq",
       "teapot": "Choynak"
     },
     "family": {
@@ -302,8 +304,7 @@
       "pepper": "Qalampir",
       "potato": "Kartoshka",
       "pumpkin": "Qovoq",
-      "tomato": "Pomidor",
-      "watermelon": "Tarvuz"
+      "tomato": "Pomidor"
     },
     "wildAnimals": {
       "bear": "Ayiq",

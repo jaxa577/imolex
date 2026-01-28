@@ -255,7 +255,7 @@ const goBack = () => {
 // Mapping for theme IDs to their translation category names
 const themeToItemCategory = {
   "action-words": "actionWords",
-  animals: "animals",
+  "domestic-animals": "animals",
   "body-parts": "bodyParts",
   clothes: "clothes",
   colors: "colors",
@@ -278,7 +278,7 @@ const themeToItemCategory = {
 // Theme name mapping
 const themeNameMap = {
   "action-words": "themes.actionWords",
-  animals: "themes.animals",
+  "domestic-animals": "themes.animals",
   "body-parts": "themes.bodyParts",
   clothes: "themes.clothes",
   colors: "themes.colors",

@@ -111,6 +111,7 @@
     },
     "animals": {
       "cat": "Кошка",
+      "camel": "Верблюд",
       "chicken": "Курица",
       "cock": "Петух",
       "cow": "Корова",
@@ -143,8 +144,9 @@
       "orange": "Апельсин",
       "peach": "Персик",
       "pear": "Груша",
-      "apricote": "Абрикос",
-      "pomegranate": "Гранат"
+      "apricot": "Абрикос",
+      "pomegranate": "Гранат",
+      "watermelon": "Арбуз"
     },
     "clothes": {
       "boots": "Сапоги",
@@ -180,7 +182,7 @@
       "glass": "Стакан",
       "pan": "Сковорода",
       "plate": "Тарелка",
-      "spoon-knife-fork": "Столовые приборы",
+      "spoon": "Ложка",
       "teapot": "Чайник"
     },
     "family": {
@@ -302,8 +304,7 @@
       "pepper": "Перец",
       "potato": "Картофель",
       "pumpkin": "Тыква",
-      "tomato": "Помидор",
-      "watermelon": "Арбуз"
+      "tomato": "Помидор"
     },
     "wildAnimals": {
       "bear": "Медведь",

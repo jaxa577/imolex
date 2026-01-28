@@ -51,12 +51,14 @@ defineEmits(['select', 'back'])
 
 const themeNameMap = {
   'action-words': 'themes.actionWords',
-  'animals': 'themes.animals',
+  'domestic-animals': 'themes.animals',
   'body-parts': 'themes.bodyParts',
   'clothes': 'themes.clothes',
   'colors': 'themes.colors',
   'dishes': 'themes.dishes',
+  'family': 'themes.family',
   'food': 'themes.food',
+  'fruits': 'themes.fruits',
   'furniture': 'themes.furniture',
   'household-appliances': 'themes.householdAppliances',
   'insects': 'themes.insects',
@@ -76,12 +78,14 @@ const getThemeName = (themeId) => {
 // Mapping for theme IDs to their translation category names
 const themeToItemCategory = {
   'action-words': 'actionWords',
-  'animals': 'animals',
+  'domestic-animals': 'animals',
   'body-parts': 'bodyParts',
   'clothes': 'clothes',
   'colors': 'colors',
   'dishes': 'dishes',
+  'family': 'family',
   'food': 'food',
+  'fruits': 'fruits',
   'furniture': 'furniture',
   'household-appliances': 'householdAppliances',
   'insects': 'insects',

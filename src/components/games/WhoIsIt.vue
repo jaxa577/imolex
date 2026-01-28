@@ -82,11 +82,13 @@
         <!-- Sign Language Video Question -->
         <div v-else-if="currentQuestionData.type === 'sign'" class="question-display sign-question">
           <h2 class="question-title">{{ $t('whoIsIt.whatSignIsThis') }}</h2>
-          <VideoPlayer
-            :video-src="currentQuestionData.videoSrc"
-            :gif-src="currentQuestionData.gifSrc"
-            :use-video="true"
-          />
+          <div class="sign-video-container">
+            <VideoPlayer
+              :video-src="currentQuestionData.videoSrc"
+              :gif-src="currentQuestionData.gifSrc"
+              :use-video="true"
+            />
+          </div>
         </div>
       </div>
 
@@ -108,7 +110,6 @@
             <div class="option-image-wrapper">
               <img :src="option.image" :alt="option.caption" class="option-image" />
             </div>
-            <p class="option-caption">{{ option.caption }}</p>
           </div>
 
           <!-- Word Option -->
@@ -195,12 +196,14 @@ const getThemeData = () => {
 // Mapping for theme IDs to their translation category names
 const themeToItemCategory = {
   'action-words': 'actionWords',
-  'animals': 'animals',
+  'domestic-animals': 'animals',
   'body-parts': 'bodyParts',
   'clothes': 'clothes',
   'colors': 'colors',
   'dishes': 'dishes',
+  'family': 'family',
   'food': 'food',
+  'fruits': 'fruits',
   'furniture': 'furniture',
   'household-appliances': 'householdAppliances',
   'insects': 'insects',
@@ -438,6 +441,14 @@ onMounted(() => {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.sign-video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .options-grid {

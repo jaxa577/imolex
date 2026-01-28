@@ -122,6 +122,14 @@ export const themes = [
         description: "Learn about cat",
       },
       {
+        id: "camel",
+        name: "Camel",
+        image: "/assets/images/themes/animals/camel.jpg",
+        signVideo: "/assets/videos/sign-language/animals/camel.MP4",
+        signGif: "/assets/videos/sign-language/animals/camel.gif",
+        description: "Learn about camel",
+      },
+      {
         id: "chicken",
         name: "Chicken",
         image: "/assets/images/themes/animals/chicken.jpg",
@@ -577,6 +585,14 @@ export const themes = [
         signGif: "/assets/videos/sign-language/fruits/pomegranate.gif",
         description: "Learn about pomegranate",
       },
+      {
+        id: "watermelon",
+        name: "Watermelon",
+        image: "/assets/images/themes/fruits/watermelon.jpg",
+        signVideo: "/assets/videos/sign-language/fruits/watermelon.MP4",
+        signGif: "/assets/videos/sign-language/fruits/watermelon.gif",
+        description: "Learn about watermelon",
+      },
     ],
   },
   {
@@ -704,7 +720,7 @@ export const themes = [
       {
         id: "son",
         name: "Son",
-        image: "/assets/images/themes/family/son.png",
+        image: "/assets/images/themes/family/brother.png",
         signVideo: "/assets/videos/sign-language/family/son.MP4",
         signGif: "/assets/videos/sign-language/family/son.gif",
         description: "Learn about son",
@@ -712,7 +728,7 @@ export const themes = [
       {
         id: "daughter",
         name: "Daughter",
-        image: "/assets/images/themes/family/daughter.png",
+        image: "/assets/images/themes/family/sister.png",
         signVideo: "/assets/videos/sign-language/family/daughter.MP4",
         signGif: "/assets/videos/sign-language/family/daughter.gif",
         description: "Learn about daughter",
@@ -782,14 +798,6 @@ export const themes = [
         signVideo: "/assets/videos/sign-language/food/milk.MP4",
         signGif: "/assets/videos/sign-language/food/milk.gif",
         description: "Learn about milk",
-      },
-      {
-        id: "porridge",
-        name: "Porridge",
-        image: "/assets/images/themes/food/porridge.jpg",
-        signVideo: "/assets/videos/sign-language/food/porridge.MP4",
-        signGif: "/assets/videos/sign-language/food/porridge.gif",
-        description: "Learn about porridge",
       },
       {
         id: "salt",
@@ -1572,14 +1580,6 @@ export const themes = [
         signVideo: "/assets/videos/sign-language/vegetables/tomato.MP4",
         signGif: "/assets/videos/sign-language/vegetables/tomato.gif",
         description: "Learn about tomato",
-      },
-      {
-        id: "watermelon",
-        name: "Watermelon",
-        image: "/assets/images/themes/vegetables/watermelon.jpg",
-        signVideo: "/assets/videos/sign-language/vegetables/watermelon.MP4",
-        signGif: "/assets/videos/sign-language/vegetables/watermelon.gif",
-        description: "Learn about watermelon",
       },
     ],
   },

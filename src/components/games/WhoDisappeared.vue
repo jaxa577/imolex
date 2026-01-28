@@ -3,18 +3,18 @@
     <!-- Game Header -->
     <div class="game-header">
       <div class="score-board">
-        <span class="score-label">Score:</span>
+        <span class="score-label">{{ $t('games.score') }}</span>
         <span class="score-value">{{ score }}</span>
       </div>
       <div class="round-info">
-        <span>Round {{ round }}</span>
+        <span>{{ $t('games.question') }} {{ round }}</span>
       </div>
       <Button
         icon="pi pi-times"
         class="close-button"
         rounded
         @click="$emit('close')"
-        aria-label="Close game"
+        :aria-label="$t('games.close')"
       />
     </div>
 
@@ -23,23 +23,22 @@
       <!-- Phase 1: Memorize -->
       <div v-if="phase === 'memorize'" class="memorize-phase">
         <div class="instruction">
-          <h2>Remember all these items!</h2>
+          <h2>{{ $t('whoDisappeared.memorize') }}</h2>
           <div class="timer">
             <i class="pi pi-clock"></i>
-            <span>{{ timeRemaining }}s</span>
+            <span>{{ $t('whoDisappeared.timeLeft') }} {{ timeRemaining }}s</span>
           </div>
         </div>
 
         <div class="items-grid">
           <div
-            v-for="item in items"
+            v-for="item in displayItems"
             :key="item.id"
             class="item-card memorize"
           >
             <div class="item-image">
               <img :src="item.image" :alt="item.name" />
             </div>
-            <p class="item-name">{{ item.name }}</p>
           </div>
         </div>
       </div>
@@ -47,13 +46,12 @@
       <!-- Phase 2: Find Missing -->
       <div v-else-if="phase === 'guess'" class="guess-phase">
         <div class="instruction">
-          <h2>Who disappeared?</h2>
-          <p>Click on the item that is missing!</p>
+          <h2>{{ $t('whoDisappeared.guess') }}</h2>
         </div>
 
         <div class="items-grid">
           <div
-            v-for="item in items"
+            v-for="item in displayItems"
             :key="item.id"
             class="item-card"
             :class="{ hidden: item.isHidden, selected: selectedItem === item.id }"
@@ -64,17 +62,15 @@
             <div v-else class="question-mark">
               <i class="pi pi-question"></i>
             </div>
-            <p class="item-name">{{ item.name }}</p>
           </div>
         </div>
 
         <div class="guess-options">
-          <h3>Who is missing?</h3>
           <div class="options-list">
             <Button
-              v-for="item in items"
+              v-for="item in displayItems"
               :key="item.id"
-              :label="item.name"
+              :label="getItemName(item.id)"
               :class="['option-button', { selected: selectedItem === item.id }]"
               @click="selectItem(item.id)"
             />
@@ -86,14 +82,12 @@
       <div v-else-if="phase === 'result'" class="result-phase">
         <div class="result-message" :class="{ correct: isCorrect, incorrect: !isCorrect }">
           <i :class="isCorrect ? 'pi pi-check-circle' : 'pi pi-times-circle'"></i>
-          <h2>{{ isCorrect ? 'Excellent!' : 'Not quite!' }}</h2>
-          <p v-if="isCorrect">You found the missing item!</p>
-          <p v-else>The correct answer was: <strong>{{ correctAnswer }}</strong></p>
+          <h2>{{ isCorrect ? $t('whoIsIt.greatJob') : $t('whoIsIt.tryAgain') }}</h2>
         </div>
 
         <div class="items-grid">
           <div
-            v-for="item in items"
+            v-for="item in displayItems"
             :key="item.id"
             class="item-card"
             :class="{
@@ -105,17 +99,15 @@
             <div class="item-image">
               <img :src="item.image" :alt="item.name" />
             </div>
-            <p class="item-name">{{ item.name }}</p>
             <div v-if="item.isHidden" class="reveal-badge">
               <i class="pi pi-eye"></i>
-              <span>This one!</span>
             </div>
           </div>
         </div>
 
         <div class="next-button-container">
           <Button
-            label="Next Round"
+            :label="$t('games.nextQuestion')"
             icon="pi pi-arrow-right"
             iconPos="right"
             class="next-button"
@@ -129,8 +121,10 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import Button from 'primevue/button'
+import { themes } from '@/data/themes.js'
 
 const props = defineProps({
   themeId: {
@@ -149,6 +143,8 @@ const props = defineProps({
 
 const emit = defineEmits(['close', 'finish'])
 
+const { t } = useI18n()
+
 // Game state
 const phase = ref('memorize') // 'memorize', 'guess', 'result'
 const score = ref(0)
@@ -156,51 +152,86 @@ const round = ref(1)
 const timeRemaining = ref(5)
 const selectedItem = ref(null)
 const isCorrect = ref(false)
+const displayItems = ref([])
 let timerInterval = null
 
-// Mock items data (in real app, load from theme data)
-const items = ref([
-  {
-    id: 'mother',
-    name: 'Mother',
-    image: '/assets/images/themes/family/mother.jpg',
-    isHidden: false
-  },
-  {
-    id: 'father',
-    name: 'Father',
-    image: '/assets/images/themes/family/father.jpg',
-    isHidden: false
-  },
-  {
-    id: 'sister',
-    name: 'Sister',
-    image: '/assets/images/themes/family/sister.jpg',
-    isHidden: true // This one disappears
-  },
-  {
-    id: 'brother',
-    name: 'Brother',
-    image: '/assets/images/themes/family/brother.jpg',
-    isHidden: false
-  },
-  {
-    id: 'grandmother',
-    name: 'Grandmother',
-    image: '/assets/images/themes/family/grandmother.jpg',
-    isHidden: false
-  }
-])
+// Mapping for theme IDs to their translation category names
+const themeToItemCategory = {
+  'action-words': 'actionWords',
+  'domestic-animals': 'animals',
+  'body-parts': 'bodyParts',
+  'clothes': 'clothes',
+  'colors': 'colors',
+  'dishes': 'dishes',
+  'family': 'family',
+  'food': 'food',
+  'fruits': 'fruits',
+  'furniture': 'furniture',
+  'household-appliances': 'householdAppliances',
+  'insects': 'insects',
+  'natural-phenomena': 'naturalPhenomena',
+  'occupations': 'occupations',
+  'places': 'places',
+  'school-supplies': 'schoolSupplies',
+  'transports': 'transports',
+  'vegetables': 'vegetables',
+  'wild-animals': 'wildAnimals'
+}
 
-const correctAnswer = computed(() => {
-  const hidden = items.value.find(item => item.isHidden)
-  return hidden?.name || ''
-})
+// Get theme data
+const getThemeData = () => {
+  return themes.find(theme => theme.id === props.themeId)
+}
+
+// Helper to get translated item name
+const getItemName = (itemId) => {
+  const category = themeToItemCategory[props.themeId]
+  if (category) {
+    const translationKey = `items.${category}.${itemId}`
+    const translated = t(translationKey)
+    if (translated !== translationKey) {
+      return translated
+    }
+  }
+  const theme = getThemeData()
+  const item = theme?.items?.find(i => i.id === itemId)
+  return item?.name || itemId
+}
+
+// Shuffle array helper
+const shuffleArray = (array) => {
+  const shuffled = [...array]
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+  }
+  return shuffled
+}
+
+// Initialize items from theme
+const initializeItems = () => {
+  const theme = getThemeData()
+  if (!theme || theme.items.length < props.itemCount) return
+
+  const shuffledItems = shuffleArray(theme.items)
+  const selectedItems = shuffledItems.slice(0, props.itemCount)
+
+  // Randomly select one item to hide
+  const hiddenIndex = Math.floor(Math.random() * selectedItems.length)
+
+  displayItems.value = selectedItems.map((item, index) => ({
+    id: item.id,
+    name: item.name,
+    image: item.image,
+    isHidden: index === hiddenIndex
+  }))
+}
 
 // Start memorization timer
 const startMemorizePhase = () => {
   phase.value = 'memorize'
   timeRemaining.value = Math.floor(props.showTime / 1000)
+  selectedItem.value = null
 
   timerInterval = setInterval(() => {
     timeRemaining.value--
@@ -213,7 +244,7 @@ const startMemorizePhase = () => {
 
 const selectItem = (itemId) => {
   selectedItem.value = itemId
-  const hiddenItem = items.value.find(item => item.isHidden)
+  const hiddenItem = displayItems.value.find(item => item.isHidden)
   isCorrect.value = itemId === hiddenItem?.id
 
   if (isCorrect.value) {
@@ -225,15 +256,21 @@ const selectItem = (itemId) => {
 
 const nextRound = () => {
   round.value++
-  selectedItem.value = null
-
-  // In real app: shuffle items and randomly select one to hide
-  // For now, just restart
+  initializeItems()
   startMemorizePhase()
 }
 
 // Initialize
-startMemorizePhase()
+onMounted(() => {
+  initializeItems()
+  startMemorizePhase()
+})
+
+onUnmounted(() => {
+  if (timerInterval) {
+    clearInterval(timerInterval)
+  }
+})
 </script>
 
 <style scoped>
@@ -370,7 +407,6 @@ startMemorizePhase()
   border-radius: 12px;
   overflow: hidden;
   background: #f5f5f5;
-  margin-bottom: 12px;
 }
 
 .item-image img {
@@ -387,20 +423,11 @@ startMemorizePhase()
   justify-content: center;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 12px;
-  margin-bottom: 12px;
 }
 
 .question-mark i {
   font-size: 5rem;
   color: white;
-}
-
-.item-name {
-  text-align: center;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #333;
-  margin: 0;
 }
 
 .reveal-badge {
@@ -409,13 +436,13 @@ startMemorizePhase()
   right: 12px;
   background: #4caf50;
   color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-weight: bold;
-  font-size: 1.1rem;
+  justify-content: center;
+  font-size: 1.2rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -424,12 +451,6 @@ startMemorizePhase()
   padding: 32px;
   background: #f9f9f9;
   border-radius: 16px;
-}
-
-.guess-options h3 {
-  font-size: 2rem;
-  color: #333;
-  margin: 0 0 24px 0;
 }
 
 .options-list {
