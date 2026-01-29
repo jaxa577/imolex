@@ -683,7 +683,7 @@ const getSignCaption = (themeId, itemId) => {
   }
 
   .item-image-video-wrapper {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
   }
 

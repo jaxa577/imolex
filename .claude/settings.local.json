@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(dir /b \"C:\\\\Users\\\\Jaxa\\\\Desktop\\\\dictionary\\\\deaf-dictionary\\\\public\\\\videos\")"
+      "Bash(dir /b \"C:\\\\Users\\\\Jaxa\\\\Desktop\\\\dictionary\\\\deaf-dictionary\\\\public\\\\videos\")",
+      "Bash(npm run build:*)"
     ]
   }
 }

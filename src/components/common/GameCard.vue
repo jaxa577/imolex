@@ -6,7 +6,7 @@
   >
     <template #header>
       <div class="game-card-image">
-        <img :src="game.coverImage" :alt="game.name" />
+        <img :src="game.coverImage" :alt="getGameTitle(game.id)" />
         <div class="game-icon-overlay">
           <i :class="game.icon"></i>
         </div>
@@ -14,19 +14,22 @@
     </template>
     <template #title>
       <div class="game-card-title">
-        <span>{{ game.name }}</span>
+        <span>{{ getGameTitle(game.id) }}</span>
       </div>
     </template>
     <template #content>
       <div class="game-card-content">
-        <p class="game-description">{{ game.description }}</p>
+        <p class="game-description">{{ getGameDescription(game.id) }}</p>
       </div>
     </template>
   </Card>
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n'
 import Card from 'primevue/card'
+
+const { t } = useI18n()
 
 defineProps({
   game: {
@@ -36,6 +39,22 @@ defineProps({
 })
 
 defineEmits(['select'])
+
+const gameTranslationKeys = {
+  'who-is-it': 'whoIsIt',
+  'find-pair': 'findPair',
+  'who-disappeared': 'whoDisappeared'
+}
+
+const getGameTitle = (gameId) => {
+  const key = gameTranslationKeys[gameId]
+  return key ? t(`${key}.title`) : gameId
+}
+
+const getGameDescription = (gameId) => {
+  const key = gameTranslationKeys[gameId]
+  return key ? t(`${key}.description`) : ''
+}
 </script>
 
 <style scoped>

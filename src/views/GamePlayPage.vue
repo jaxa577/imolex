@@ -3,17 +3,17 @@
     <!-- Game Selection / Configuration (before starting) -->
     <div v-if="!gameStarted && game" class="game-setup">
       <div class="setup-card">
-        <h1 class="game-title">{{ game.name }}</h1>
-        <p class="game-description">{{ game.description }}</p>
+        <h1 class="game-title">{{ getGameTitle(game.id) }}</h1>
+        <p class="game-description">{{ getGameDescription(game.id) }}</p>
 
         <!-- Theme Selection -->
         <div class="setup-section">
-          <h3>Choose a Theme:</h3>
+          <h3>{{ $t('games.selectTheme') }}:</h3>
           <div class="theme-selector">
             <Button
               v-for="theme in themes"
               :key="theme.id"
-              :label="theme.name"
+              :label="getThemeName(theme.id)"
               :class="['theme-option', { selected: selectedTheme === theme.id }]"
               :style="{ backgroundColor: selectedTheme === theme.id ? theme.backgroundColor : '' }"
               @click="selectedTheme = theme.id"
@@ -23,19 +23,19 @@
 
         <!-- Variation Selection (for Who Is It) -->
         <div v-if="game.variations" class="setup-section">
-          <h3>Choose Game Mode:</h3>
+          <h3>{{ $t('games.selectVariation') }}:</h3>
           <div class="variation-selector">
             <Button
               v-for="variation in game.variations"
               :key="variation.id"
-              :label="variation.name"
+              :label="getVariationName(variation.id)"
               :class="['variation-option', { selected: selectedVariation === variation.id }]"
               @click="selectedVariation = variation.id"
             >
               <template #default>
                 <div class="variation-content">
-                  <span class="variation-name">{{ variation.name }}</span>
-                  <span class="variation-desc">{{ variation.description }}</span>
+                  <span class="variation-name">{{ getVariationName(variation.id) }}</span>
+                  <span class="variation-desc">{{ getVariationDescription(variation.id) }}</span>
                 </div>
               </template>
             </Button>
@@ -44,19 +44,19 @@
 
         <!-- Mode Selection (for Find Pair) -->
         <div v-if="game.modes" class="setup-section">
-          <h3>Choose Difficulty:</h3>
+          <h3>{{ $t('games.selectMode') }}:</h3>
           <div class="mode-selector">
             <Button
               v-for="mode in game.modes"
               :key="mode.id"
-              :label="mode.name"
+              :label="getModeName(mode.id)"
               :class="['mode-option', { selected: selectedMode === mode.id }]"
               @click="selectedMode = mode.id"
             >
               <template #default>
                 <div class="mode-content">
-                  <span class="mode-name">{{ mode.name }}</span>
-                  <span class="mode-desc">{{ mode.description }}</span>
+                  <span class="mode-name">{{ getModeName(mode.id) }}</span>
+                  <span class="mode-desc">{{ getModeDescription(mode.id) }}</span>
                 </div>
               </template>
             </Button>
@@ -65,7 +65,7 @@
 
         <!-- Item Count Selection (for Who Disappeared) -->
         <div v-if="game.itemCounts" class="setup-section">
-          <h3>Number of Items:</h3>
+          <h3>{{ $t('whoDisappeared.itemCount') }}:</h3>
           <div class="count-selector">
             <Button
               v-for="count in game.itemCounts"
@@ -80,7 +80,7 @@
         <!-- Start Button -->
         <div class="start-button-container">
           <Button
-            label="Start Game!"
+            :label="$t('games.startGame')"
             icon="pi pi-play"
             class="start-button"
             size="large"
@@ -88,7 +88,7 @@
             @click="startGame"
           />
           <Button
-            label="Back"
+            :label="$t('theme.backButton')"
             icon="pi pi-arrow-left"
             class="back-button-setup"
             @click="goBack"
@@ -135,6 +135,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import Button from 'primevue/button'
 import ProgressSpinner from 'primevue/progressspinner'
 import WhoIsIt from '@/components/games/WhoIsIt.vue'
@@ -143,6 +144,7 @@ import WhoDisappeared from '@/components/games/WhoDisappeared.vue'
 import { getGameById } from '@/data/games'
 import { themes } from '@/data/themes'
 
+const { t } = useI18n()
 const route = useRoute()
 const router = useRouter()
 
@@ -152,6 +154,89 @@ const selectedTheme = ref('')
 const selectedVariation = ref('')
 const selectedMode = ref('')
 const selectedItemCount = ref(5)
+
+// Translation key mapping for games
+const gameTranslationKeys = {
+  'who-is-it': 'whoIsIt',
+  'find-pair': 'findPair',
+  'who-disappeared': 'whoDisappeared'
+}
+
+// Translation key mapping for themes
+const themeTranslationKeys = {
+  'action-words': 'actionWords',
+  'domestic-animals': 'animals',
+  'body-parts': 'bodyParts',
+  'clothes': 'clothes',
+  'colors': 'colors',
+  'dishes': 'dishes',
+  'family': 'family',
+  'food': 'food',
+  'furniture': 'furniture',
+  'household-appliances': 'householdAppliances',
+  'insects': 'insects',
+  'natural-phenomena': 'naturalPhenomena',
+  'occupations': 'occupations',
+  'places': 'places',
+  'school-supplies': 'schoolSupplies',
+  'fruits': 'fruits',
+  'transports': 'transport',
+  'vegetables': 'vegetables',
+  'wild-animals': 'wildAnimals'
+}
+
+const getGameTitle = (gameId) => {
+  const key = gameTranslationKeys[gameId]
+  return key ? t(`${key}.title`) : gameId
+}
+
+const getGameDescription = (gameId) => {
+  const key = gameTranslationKeys[gameId]
+  return key ? t(`${key}.description`) : ''
+}
+
+const getThemeName = (themeId) => {
+  const key = themeTranslationKeys[themeId]
+  return key ? t(`themes.${key}`) : themeId
+}
+
+const getVariationName = (variationId) => {
+  const variationKeys = {
+    'word-to-picture': 'wordToPicture',
+    'picture-to-word': 'pictureToWord',
+    'sign-to-word': 'signToWord'
+  }
+  const key = variationKeys[variationId]
+  return key ? t(`whoIsIt.${key}`) : variationId
+}
+
+const getVariationDescription = (variationId) => {
+  const descKeys = {
+    'word-to-picture': 'wordToPictureDesc',
+    'picture-to-word': 'pictureToWordDesc',
+    'sign-to-word': 'signToWordDesc'
+  }
+  const key = descKeys[variationId]
+  return key ? t(`whoIsIt.${key}`) : ''
+}
+
+const getModeName = (modeId) => {
+  const modeKeys = {
+    'face-down': 'memoryMode',
+    'face-up': 'matchingMode'
+  }
+  const key = modeKeys[modeId]
+  return key ? t(`findPair.${key}`) : modeId
+}
+
+const getModeDescription = (modeId) => {
+  const descKeys = {
+    'face-down': 'memoryModeDesc',
+    'face-up': 'matchingModeDesc'
+  }
+  const key = descKeys[modeId]
+  return key ? t(`findPair.${key}`) : ''
+}
 
 onMounted(() => {
   const gameId = route.params.gameId
