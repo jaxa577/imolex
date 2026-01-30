@@ -213,7 +213,8 @@ const themeToItemCategory = {
   'school-supplies': 'schoolSupplies',
   'transports': 'transports',
   'vegetables': 'vegetables',
-  'wild-animals': 'wildAnimals'
+  'wild-animals': 'wildAnimals',
+  'alphabet-uzb': 'alphabetUzb'
 }
 
 // Helper to get translated item name

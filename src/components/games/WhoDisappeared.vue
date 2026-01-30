@@ -175,7 +175,8 @@ const themeToItemCategory = {
   'school-supplies': 'schoolSupplies',
   'transports': 'transports',
   'vegetables': 'vegetables',
-  'wild-animals': 'wildAnimals'
+  'wild-animals': 'wildAnimals',
+  'alphabet-uzb': 'alphabetUzb'
 }
 
 // Get theme data

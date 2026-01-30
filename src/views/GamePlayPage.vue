@@ -182,7 +182,8 @@ const themeTranslationKeys = {
   'fruits': 'fruits',
   'transports': 'transport',
   'vegetables': 'vegetables',
-  'wild-animals': 'wildAnimals'
+  'wild-animals': 'wildAnimals',
+  'alphabet-uzb': 'alphabetUzb'
 }
 
 const getGameTitle = (gameId) => {

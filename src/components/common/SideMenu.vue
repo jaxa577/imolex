@@ -68,11 +68,12 @@ const themeNameMap = {
   'school-supplies': 'themes.schoolSupplies',
   'transports': 'themes.transport',
   'vegetables': 'themes.vegetables',
-  'wild-animals': 'themes.wildAnimals'
+  'wild-animals': 'themes.wildAnimals',
+  'alphabet-uzb': 'themes.alphabetUzb'
 }
 
 const getThemeName = (themeId) => {
-  return t(themeNameMap[themeId] || 'themes.animals')
+  return t(themeNameMap[themeId] || themeId)
 }
 
 // Mapping for theme IDs to their translation category names
@@ -95,7 +96,8 @@ const themeToItemCategory = {
   'school-supplies': 'schoolSupplies',
   'transports': 'transports',
   'vegetables': 'vegetables',
-  'wild-animals': 'wildAnimals'
+  'wild-animals': 'wildAnimals',
+  'alphabet-uzb': 'alphabetUzb'
 }
 
 const getItemName = (themeId, itemId) => {

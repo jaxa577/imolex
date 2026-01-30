@@ -93,7 +93,8 @@
     "schoolSupplies": "Maktab buyumlari",
     "transport": "Transport",
     "vegetables": "Sabzavotlar",
-    "wildAnimals": "Yovvoyi hayvonlar"
+    "wildAnimals": "Yovvoyi hayvonlar",
+    "alphabetUzb": "O'zbek Alifbosi"
   },
   "settings": {
     "language": "Til",
@@ -158,7 +159,7 @@
     "clothes": {
       "boots": "Etik",
       "dress": "Ko'ylak",
-      "hat": "Shlyapa",
+      "hat": "Qalpoq",
       "jacket": "Kurtka",
       "pants": "Shim",
       "scarf": "Sharf",
@@ -190,6 +191,7 @@
       "pan": "Tova",
       "plate": "Likop",
       "spoon": "Qoshiq",
+      "knife": "Pichoq",
       "teapot": "Choynak"
     },
     "family": {
@@ -237,9 +239,9 @@
       "bee": "Ari",
       "butterfly": "Kapalak",
       "cockroach": "Tarakan",
-      "fly": "Chivin",
+      "fly": "Pashsha",
       "grasshopper": "Chigirtka",
-      "mosquito": "Pashsha"
+      "mosquito": "Chivin"
     },
     "naturalPhenomena": {
       "cloud": "Bulut",
@@ -325,6 +327,37 @@
       "rabbit": "Quyon",
       "tiger": "Yo'lbars",
       "wolf": "Bo'ri"
+    },
+    "alphabetUzb": {
+      "a": "A harfi",
+      "b": "B harfi",
+      "d": "D harfi",
+      "e": "E harfi",
+      "f": "F harfi",
+      "g": "G harfi",
+      "g-apostrophe": "G' harfi",
+      "h": "H harfi",
+      "i": "I harfi",
+      "j": "J harfi",
+      "k": "K harfi",
+      "l": "L harfi",
+      "m": "M harfi",
+      "n": "N harfi",
+      "ng": "NG harfi",
+      "o": "O harfi",
+      "o-apostrophe": "O' harfi",
+      "p": "P harfi",
+      "q": "Q harfi",
+      "r": "R harfi",
+      "s": "S harfi",
+      "sh": "SH harfi",
+      "t": "T harfi",
+      "u": "U harfi",
+      "v": "V harfi",
+      "x": "X harfi",
+      "y": "Y harfi",
+      "z": "Z harfi",
+      "ch": "CH harfi"
     }
   }
 }

@@ -91,8 +91,9 @@
               </Transition>
             </div>
 
-            <!-- Sign Language Video -->
+            <!-- Sign Language Video (hidden for image-only themes like alphabet) -->
             <VideoPlayer
+              v-if="!theme.isImageOnly"
               :video-src="activeItem.signVideo"
               :gif-src="activeItem.signGif"
               :alt="`Sign language for ${getItemName(theme.id, activeItem.id)}`"
@@ -273,6 +274,7 @@ const themeToItemCategory = {
   transports: "transports",
   vegetables: "vegetables",
   "wild-animals": "wildAnimals",
+  "alphabet-uzb": "alphabetUzb",
 };
 
 // Theme name mapping
@@ -296,10 +298,11 @@ const themeNameMap = {
   transports: "themes.transport",
   vegetables: "themes.vegetables",
   "wild-animals": "themes.wildAnimals",
+  "alphabet-uzb": "themes.alphabetUzb",
 };
 
 const getThemeName = (themeId) => {
-  return t(themeNameMap[themeId] || "themes.animals");
+  return t(themeNameMap[themeId] || themeId);
 };
 
 const getItemName = (themeId, itemId) => {

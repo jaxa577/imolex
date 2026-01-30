@@ -4,11 +4,11 @@
     <div class="game-header">
       <div class="stats">
         <div class="stat-item">
-          <span class="stat-label">Moves:</span>
+          <span class="stat-label">{{ $t('findPair.moves') }}</span>
           <span class="stat-value">{{ moves }}</span>
         </div>
         <div class="stat-item">
-          <span class="stat-label">Pairs:</span>
+          <span class="stat-label">{{ $t('games.score') }}</span>
           <span class="stat-value">{{ matchedPairs }} / {{ totalPairs }}</span>
         </div>
       </div>
@@ -17,7 +17,7 @@
         class="close-button"
         rounded
         @click="$emit('close')"
-        aria-label="Close game"
+        :aria-label="$t('games.close')"
       />
     </div>
 
@@ -60,17 +60,17 @@
       <div v-if="isComplete" class="win-message">
         <div class="win-content">
           <i class="pi pi-trophy"></i>
-          <h2>Congratulations!</h2>
-          <p>You completed the game in {{ moves }} moves!</p>
+          <h2>{{ $t('findPair.wellDone') }}</h2>
+          <p>{{ $t('findPair.youWon', { moves: moves }) }}</p>
           <div class="win-buttons">
             <Button
-              label="Play Again"
+              :label="$t('games.playAgain')"
               icon="pi pi-refresh"
               class="play-again-button"
               @click="resetGame"
             />
             <Button
-              label="Back to Games"
+              :label="$t('games.close')"
               icon="pi pi-arrow-left"
               class="back-button-win"
               @click="$emit('close')"
@@ -83,8 +83,10 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import Button from 'primevue/button'
+import { themes } from '@/data/themes.js'
 
 const props = defineProps({
   themeId: {
@@ -103,71 +105,109 @@ const props = defineProps({
 
 const emit = defineEmits(['close', 'finish'])
 
+const { t } = useI18n()
+
 // Game state
 const moves = ref(0)
 const matchedPairs = ref(0)
 const totalPairs = computed(() => props.gridSize.pairs)
 const flippedCards = ref([])
 const isProcessing = ref(false)
+const cards = ref([])
 
-// Mock cards data (in real app, generate from theme data)
-const cards = ref([
-  // Pair 1
-  {
-    id: 'apple-word',
-    pairId: 'apple',
-    type: 'word',
-    content: 'Apple',
-    isFlipped: false,
-    isMatched: false
-  },
-  {
-    id: 'apple-picture',
-    pairId: 'apple',
-    type: 'picture',
-    image: '/assets/images/themes/fruits/apple.jpg',
-    caption: 'Apple',
-    isFlipped: false,
-    isMatched: false
-  },
-  // Pair 2
-  {
-    id: 'banana-word',
-    pairId: 'banana',
-    type: 'word',
-    content: 'Banana',
-    isFlipped: false,
-    isMatched: false
-  },
-  {
-    id: 'banana-picture',
-    pairId: 'banana',
-    type: 'picture',
-    image: '/assets/images/themes/fruits/banana.jpg',
-    caption: 'Banana',
-    isFlipped: false,
-    isMatched: false
-  },
-  // Pair 3
-  {
-    id: 'orange-word',
-    pairId: 'orange',
-    type: 'word',
-    content: 'Orange',
-    isFlipped: false,
-    isMatched: false
-  },
-  {
-    id: 'orange-picture',
-    pairId: 'orange',
-    type: 'picture',
-    image: '/assets/images/themes/fruits/orange.jpg',
-    caption: 'Orange',
-    isFlipped: false,
-    isMatched: false
+// Mapping for theme IDs to their translation category names
+const themeToItemCategory = {
+  'action-words': 'actionWords',
+  'domestic-animals': 'animals',
+  'body-parts': 'bodyParts',
+  'clothes': 'clothes',
+  'colors': 'colors',
+  'dishes': 'dishes',
+  'family': 'family',
+  'food': 'food',
+  'fruits': 'fruits',
+  'furniture': 'furniture',
+  'household-appliances': 'householdAppliances',
+  'insects': 'insects',
+  'natural-phenomena': 'naturalPhenomena',
+  'occupations': 'occupations',
+  'places': 'places',
+  'school-supplies': 'schoolSupplies',
+  'transports': 'transports',
+  'vegetables': 'vegetables',
+  'wild-animals': 'wildAnimals',
+  'alphabet-uzb': 'alphabetUzb'
+}
+
+// Get theme data
+const getThemeData = () => {
+  return themes.find(theme => theme.id === props.themeId)
+}
+
+// Helper to get translated item name
+const getItemName = (itemId) => {
+  const category = themeToItemCategory[props.themeId]
+  if (category) {
+    const translationKey = `items.${category}.${itemId}`
+    const translated = t(translationKey)
+    if (translated !== translationKey) {
+      return translated
+    }
   }
-  // Add more pairs based on gridSize
-])
+  const theme = getThemeData()
+  const item = theme?.items?.find(i => i.id === itemId)
+  return item?.name || itemId
+}
+
+// Shuffle array helper
+const shuffleArray = (array) => {
+  const shuffled = [...array]
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+  }
+  return shuffled
+}
+
+// Generate cards from theme data
+const generateCards = () => {
+  const theme = getThemeData()
+  if (!theme || theme.items.length < props.gridSize.pairs) return
+
+  // Shuffle and select required number of items
+  const shuffledItems = shuffleArray(theme.items)
+  const selectedItems = shuffledItems.slice(0, props.gridSize.pairs)
+
+  // Create card pairs (word + picture for each item)
+  const cardPairs = []
+  selectedItems.forEach(item => {
+    const itemName = getItemName(item.id)
+
+    // Word card
+    cardPairs.push({
+      id: `${item.id}-word`,
+      pairId: item.id,
+      type: 'word',
+      content: itemName,
+      isFlipped: false,
+      isMatched: false
+    })
+
+    // Picture card
+    cardPairs.push({
+      id: `${item.id}-picture`,
+      pairId: item.id,
+      type: 'picture',
+      image: item.image,
+      caption: itemName,
+      isFlipped: false,
+      isMatched: false
+    })
+  })
+
+  // Shuffle all cards
+  cards.value = shuffleArray(cardPairs)
+}
 
 const gridStyle = computed(() => ({
   gridTemplateColumns: `repeat(${props.gridSize.cols}, 1fr)`,
@@ -222,14 +262,13 @@ const resetGame = () => {
   matchedPairs.value = 0
   flippedCards.value = []
   isProcessing.value = false
-
-  cards.value.forEach(card => {
-    card.isFlipped = false
-    card.isMatched = false
-  })
-
-  // Shuffle cards (in real app, use proper shuffle algorithm)
+  generateCards()
 }
+
+// Initialize on mount
+onMounted(() => {
+  generateCards()
+})
 </script>
 
 <style scoped>

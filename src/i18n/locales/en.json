@@ -93,7 +93,8 @@
     "fruits": "Fruits",
     "transport": "Transport",
     "vegetables": "Vegetables",
-    "wildAnimals": "Wild Animals"
+    "wildAnimals": "Wild Animals",
+    "alphabetUzb": "Uzbek Alphabet"
   },
   "settings": {
     "language": "Language",
@@ -190,6 +191,7 @@
       "pan": "Pan",
       "plate": "Plate",
       "spoon": "Spoon",
+      "knife": "Knife",
       "teapot": "Teapot"
     },
     "family": {
@@ -325,6 +327,37 @@
       "rabbit": "Rabbit",
       "tiger": "Tiger",
       "wolf": "Wolf"
+    },
+    "alphabetUzb": {
+      "a": "Letter A",
+      "b": "Letter B",
+      "d": "Letter D",
+      "e": "Letter E",
+      "f": "Letter F",
+      "g": "Letter G",
+      "g-apostrophe": "Letter G'",
+      "h": "Letter H",
+      "i": "Letter I",
+      "j": "Letter J",
+      "k": "Letter K",
+      "l": "Letter L",
+      "m": "Letter M",
+      "n": "Letter N",
+      "ng": "Letter NG",
+      "o": "Letter O",
+      "o-apostrophe": "Letter O'",
+      "p": "Letter P",
+      "q": "Letter Q",
+      "r": "Letter R",
+      "s": "Letter S",
+      "sh": "Letter SH",
+      "t": "Letter T",
+      "u": "Letter U",
+      "v": "Letter V",
+      "x": "Letter X",
+      "y": "Letter Y",
+      "z": "Letter Z",
+      "ch": "Letter CH"
     }
   }
 }

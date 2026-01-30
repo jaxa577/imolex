@@ -60,10 +60,11 @@ const themeNameMap = {
   transports: "themes.transport",
   vegetables: "themes.vegetables",
   "wild-animals": "themes.wildAnimals",
+  "alphabet-uzb": "themes.alphabetUzb",
 };
 
 const getThemeName = (themeId) => {
-  return t(themeNameMap[themeId] || "themes.animals");
+  return t(themeNameMap[themeId] || themeId);
 };
 </script>
 
