@@ -2,6 +2,7 @@
   <div class="find-pair-game">
     <!-- Game Header -->
     <div class="game-header">
+      <h2 class="game-title">{{ $t("findPair.title") }}</h2>
       <div class="stats">
         <div class="stat-item">
           <span class="stat-label">{{ $t("findPair.moves") }}</span>
@@ -290,6 +291,13 @@ onMounted(() => {
   background: white;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.game-title {
+  font-size: 1.8rem;
+  color: #667eea;
+  margin: 0;
+  font-weight: bold;
 }
 
 .stats {

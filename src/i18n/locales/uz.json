@@ -2,6 +2,12 @@
   "app": {
     "title": "Imo-ishora tilini o'rganish"
   },
+  "routes": {
+    "home": "Imo-ishora tilini o'rganish",
+    "learning": "O'rganish",
+    "games": "O'yinlar",
+    "playGame": "O'ynash"
+  },
   "home": {
     "title": "Mavzuni tanlang",
     "subtitle": "Qiziqarli mavzular orqali imo-ishora tilini o'rganing",

@@ -3,6 +3,7 @@ import HomePage from '@/views/HomePage.vue'
 import ThemeDetailPage from '@/views/ThemeDetailPage.vue'
 import GamesPage from '@/views/GamesPage.vue'
 import GamePlayPage from '@/views/GamePlayPage.vue'
+import i18n from '@/i18n'
 
 const routes = [
   {
@@ -10,7 +11,7 @@ const routes = [
     name: 'home',
     component: HomePage,
     meta: {
-      title: 'Learn Sign Language'
+      titleKey: 'routes.home'
     }
   },
   {
@@ -18,7 +19,7 @@ const routes = [
     name: 'theme-detail',
     component: ThemeDetailPage,
     meta: {
-      title: 'Learning'
+      titleKey: 'routes.learning'
     }
   },
   {
@@ -26,7 +27,7 @@ const routes = [
     name: 'games',
     component: GamesPage,
     meta: {
-      title: 'Games'
+      titleKey: 'routes.games'
     }
   },
   {
@@ -34,7 +35,7 @@ const routes = [
     name: 'game-play',
     component: GamePlayPage,
     meta: {
-      title: 'Play Game'
+      titleKey: 'routes.playGame'
     }
   }
 ]
@@ -53,7 +54,8 @@ const router = createRouter({
 
 // Update page title based on route
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title || 'Learn Sign Language'
+  const { t } = i18n.global
+  document.title = to.meta.titleKey ? t(to.meta.titleKey) : t('routes.home')
   next()
 })
 

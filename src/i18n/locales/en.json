@@ -2,6 +2,12 @@
   "app": {
     "title": "Sign Language Learning"
   },
+  "routes": {
+    "home": "Learn Sign Language",
+    "learning": "Learning",
+    "games": "Games",
+    "playGame": "Play Game"
+  },
   "home": {
     "title": "Choose a Theme",
     "subtitle": "Learn sign language through fun themes",

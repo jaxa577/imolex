@@ -45,12 +45,15 @@
     <div v-else>
       <!-- Game Header -->
       <div class="game-header">
-        <div class="score-board">
-          <span class="score-label">{{ $t('games.score') }}</span>
-          <span class="score-value">{{ score }}</span>
-        </div>
-        <div class="progress-info">
-          <span>{{ $t('games.question') }} {{ currentQuestionIndex + 1 }} / {{ totalQuestions }}</span>
+        <h2 class="game-title">{{ $t('whoIsIt.title') }}</h2>
+        <div class="header-stats">
+          <div class="score-board">
+            <span class="score-label">{{ $t('games.score') }}</span>
+            <span class="score-value">{{ score }}</span>
+          </div>
+          <div class="progress-info">
+            <span>{{ $t('games.question') }} {{ currentQuestionIndex + 1 }} / {{ totalQuestions }}</span>
+          </div>
         </div>
         <Button
           icon="pi pi-times"
@@ -372,6 +375,19 @@ onMounted(() => {
   background: white;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.game-title {
+  font-size: 1.8rem;
+  color: #667eea;
+  margin: 0;
+  font-weight: bold;
+}
+
+.header-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .score-board {
