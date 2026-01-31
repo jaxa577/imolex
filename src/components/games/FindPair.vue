@@ -4,11 +4,11 @@
     <div class="game-header">
       <div class="stats">
         <div class="stat-item">
-          <span class="stat-label">{{ $t('findPair.moves') }}</span>
+          <span class="stat-label">{{ $t("findPair.moves") }}</span>
           <span class="stat-value">{{ moves }}</span>
         </div>
         <div class="stat-item">
-          <span class="stat-label">{{ $t('games.score') }}</span>
+          <span class="stat-label">{{ $t("games.score") }}</span>
           <span class="stat-value">{{ matchedPairs }} / {{ totalPairs }}</span>
         </div>
       </div>
@@ -30,7 +30,7 @@
         :class="{
           flipped: card.isFlipped || card.isMatched || mode === 'face-up',
           matched: card.isMatched,
-          disabled: isProcessing || card.isMatched
+          disabled: isProcessing || card.isMatched,
         }"
         @click="flipCard(card)"
       >
@@ -44,7 +44,7 @@
           <!-- Picture Card -->
           <div v-if="card.type === 'picture'" class="card-content picture-card">
             <img :src="card.image" :alt="card.caption" />
-            <p class="card-caption">{{ card.caption }}</p>
+            <!-- <p class="card-caption">{{ card.caption }}</p> -->
           </div>
 
           <!-- Word Card -->
@@ -60,8 +60,8 @@
       <div v-if="isComplete" class="win-message">
         <div class="win-content">
           <i class="pi pi-trophy"></i>
-          <h2>{{ $t('findPair.wellDone') }}</h2>
-          <p>{{ $t('findPair.youWon', { moves: moves }) }}</p>
+          <h2>{{ $t("findPair.wellDone") }}</h2>
+          <p>{{ $t("findPair.youWon", { moves: moves }) }}</p>
           <div class="win-buttons">
             <Button
               :label="$t('games.playAgain')"
@@ -83,192 +83,192 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
-import { useI18n } from 'vue-i18n'
-import Button from 'primevue/button'
-import { themes } from '@/data/themes.js'
+import { ref, computed, onMounted } from "vue";
+import { useI18n } from "vue-i18n";
+import Button from "primevue/button";
+import { themes } from "@/data/themes.js";
 
 const props = defineProps({
   themeId: {
     type: String,
-    required: true
+    required: true,
   },
   mode: {
     type: String,
-    default: 'face-down' // 'face-down' or 'face-up'
+    default: "face-down", // 'face-down' or 'face-up'
   },
   gridSize: {
     type: Object,
-    default: () => ({ rows: 3, cols: 4, pairs: 6 })
-  }
-})
+    default: () => ({ rows: 3, cols: 4, pairs: 6 }),
+  },
+});
 
-const emit = defineEmits(['close', 'finish'])
+const emit = defineEmits(["close", "finish"]);
 
-const { t } = useI18n()
+const { t } = useI18n();
 
 // Game state
-const moves = ref(0)
-const matchedPairs = ref(0)
-const totalPairs = computed(() => props.gridSize.pairs)
-const flippedCards = ref([])
-const isProcessing = ref(false)
-const cards = ref([])
+const moves = ref(0);
+const matchedPairs = ref(0);
+const totalPairs = computed(() => props.gridSize.pairs);
+const flippedCards = ref([]);
+const isProcessing = ref(false);
+const cards = ref([]);
 
 // Mapping for theme IDs to their translation category names
 const themeToItemCategory = {
-  'action-words': 'actionWords',
-  'domestic-animals': 'animals',
-  'body-parts': 'bodyParts',
-  'clothes': 'clothes',
-  'colors': 'colors',
-  'dishes': 'dishes',
-  'family': 'family',
-  'food': 'food',
-  'fruits': 'fruits',
-  'furniture': 'furniture',
-  'household-appliances': 'householdAppliances',
-  'insects': 'insects',
-  'natural-phenomena': 'naturalPhenomena',
-  'occupations': 'occupations',
-  'places': 'places',
-  'school-supplies': 'schoolSupplies',
-  'transports': 'transports',
-  'vegetables': 'vegetables',
-  'wild-animals': 'wildAnimals',
-  'alphabet-uzb': 'alphabetUzb'
-}
+  "action-words": "actionWords",
+  "domestic-animals": "animals",
+  "body-parts": "bodyParts",
+  clothes: "clothes",
+  colors: "colors",
+  dishes: "dishes",
+  family: "family",
+  food: "food",
+  fruits: "fruits",
+  furniture: "furniture",
+  "household-appliances": "householdAppliances",
+  insects: "insects",
+  "natural-phenomena": "naturalPhenomena",
+  occupations: "occupations",
+  places: "places",
+  "school-supplies": "schoolSupplies",
+  transports: "transports",
+  vegetables: "vegetables",
+  "wild-animals": "wildAnimals",
+  "alphabet-uzb": "alphabetUzb",
+};
 
 // Get theme data
 const getThemeData = () => {
-  return themes.find(theme => theme.id === props.themeId)
-}
+  return themes.find((theme) => theme.id === props.themeId);
+};
 
 // Helper to get translated item name
 const getItemName = (itemId) => {
-  const category = themeToItemCategory[props.themeId]
+  const category = themeToItemCategory[props.themeId];
   if (category) {
-    const translationKey = `items.${category}.${itemId}`
-    const translated = t(translationKey)
+    const translationKey = `items.${category}.${itemId}`;
+    const translated = t(translationKey);
     if (translated !== translationKey) {
-      return translated
+      return translated;
     }
   }
-  const theme = getThemeData()
-  const item = theme?.items?.find(i => i.id === itemId)
-  return item?.name || itemId
-}
+  const theme = getThemeData();
+  const item = theme?.items?.find((i) => i.id === itemId);
+  return item?.name || itemId;
+};
 
 // Shuffle array helper
 const shuffleArray = (array) => {
-  const shuffled = [...array]
+  const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
-  return shuffled
-}
+  return shuffled;
+};
 
 // Generate cards from theme data
 const generateCards = () => {
-  const theme = getThemeData()
-  if (!theme || theme.items.length < props.gridSize.pairs) return
+  const theme = getThemeData();
+  if (!theme || theme.items.length < props.gridSize.pairs) return;
 
   // Shuffle and select required number of items
-  const shuffledItems = shuffleArray(theme.items)
-  const selectedItems = shuffledItems.slice(0, props.gridSize.pairs)
+  const shuffledItems = shuffleArray(theme.items);
+  const selectedItems = shuffledItems.slice(0, props.gridSize.pairs);
 
   // Create card pairs (word + picture for each item)
-  const cardPairs = []
-  selectedItems.forEach(item => {
-    const itemName = getItemName(item.id)
+  const cardPairs = [];
+  selectedItems.forEach((item) => {
+    const itemName = getItemName(item.id);
 
     // Word card
     cardPairs.push({
       id: `${item.id}-word`,
       pairId: item.id,
-      type: 'word',
+      type: "word",
       content: itemName,
       isFlipped: false,
-      isMatched: false
-    })
+      isMatched: false,
+    });
 
     // Picture card
     cardPairs.push({
       id: `${item.id}-picture`,
       pairId: item.id,
-      type: 'picture',
+      type: "picture",
       image: item.image,
       caption: itemName,
       isFlipped: false,
-      isMatched: false
-    })
-  })
+      isMatched: false,
+    });
+  });
 
   // Shuffle all cards
-  cards.value = shuffleArray(cardPairs)
-}
+  cards.value = shuffleArray(cardPairs);
+};
 
 const gridStyle = computed(() => ({
   gridTemplateColumns: `repeat(${props.gridSize.cols}, 1fr)`,
-  gridTemplateRows: `repeat(${props.gridSize.rows}, 1fr)`
-}))
+  gridTemplateRows: `repeat(${props.gridSize.rows}, 1fr)`,
+}));
 
-const isComplete = computed(() => matchedPairs.value === totalPairs.value)
+const isComplete = computed(() => matchedPairs.value === totalPairs.value);
 
 const flipCard = (card) => {
-  if (isProcessing.value || card.isMatched || card.isFlipped) return
-  if (props.mode === 'face-down' && flippedCards.value.length >= 2) return
+  if (isProcessing.value || card.isMatched || card.isFlipped) return;
+  if (props.mode === "face-down" && flippedCards.value.length >= 2) return;
 
-  card.isFlipped = true
-  flippedCards.value.push(card)
+  card.isFlipped = true;
+  flippedCards.value.push(card);
 
   if (flippedCards.value.length === 2) {
-    moves.value++
-    checkMatch()
+    moves.value++;
+    checkMatch();
   }
-}
+};
 
 const checkMatch = () => {
-  isProcessing.value = true
-  const [card1, card2] = flippedCards.value
+  isProcessing.value = true;
+  const [card1, card2] = flippedCards.value;
 
   if (card1.pairId === card2.pairId) {
     // Match found
     setTimeout(() => {
-      card1.isMatched = true
-      card2.isMatched = true
-      matchedPairs.value++
-      flippedCards.value = []
-      isProcessing.value = false
+      card1.isMatched = true;
+      card2.isMatched = true;
+      matchedPairs.value++;
+      flippedCards.value = [];
+      isProcessing.value = false;
 
       if (isComplete.value) {
-        emit('finish', { moves: moves.value, pairs: totalPairs.value })
+        emit("finish", { moves: moves.value, pairs: totalPairs.value });
       }
-    }, 600)
+    }, 600);
   } else {
     // No match
     setTimeout(() => {
-      card1.isFlipped = false
-      card2.isFlipped = false
-      flippedCards.value = []
-      isProcessing.value = false
-    }, 1000)
+      card1.isFlipped = false;
+      card2.isFlipped = false;
+      flippedCards.value = [];
+      isProcessing.value = false;
+    }, 1000);
   }
-}
+};
 
 const resetGame = () => {
-  moves.value = 0
-  matchedPairs.value = 0
-  flippedCards.value = []
-  isProcessing.value = false
-  generateCards()
-}
+  moves.value = 0;
+  matchedPairs.value = 0;
+  flippedCards.value = [];
+  isProcessing.value = false;
+  generateCards();
+};
 
 // Initialize on mount
 onMounted(() => {
-  generateCards()
-})
+  generateCards();
+});
 </script>
 
 <style scoped>
@@ -492,20 +492,32 @@ onMounted(() => {
 
 /* Animations */
 @keyframes matchPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
-.scale-enter-active, .scale-leave-active {
+.scale-enter-active,
+.scale-leave-active {
   transition: all 0.4s ease;
 }
 
-.scale-enter-from, .scale-leave-to {
+.scale-enter-from,
+.scale-leave-to {
   opacity: 0;
   transform: scale(0.8);
 }
