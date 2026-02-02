@@ -100,7 +100,8 @@
     "transport": "Transport",
     "vegetables": "Sabzavotlar",
     "wildAnimals": "Yovvoyi hayvonlar",
-    "alphabetUzb": "O'zbek Alifbosi"
+    "alphabetUzb": "O'zbek Alifbosi",
+    "alphabetRu": "Rus Alifbosi"
   },
   "settings": {
     "language": "Til",
@@ -364,6 +365,40 @@
       "y": "Y harfi",
       "z": "Z harfi",
       "ch": "CH harfi"
+    },
+    "alphabetRu": {
+      "а": "А harfi",
+      "б": "Б harfi",
+      "в": "В harfi",
+      "г": "Г harfi",
+      "д": "Д harfi",
+      "е": "Е harfi",
+      "ж": "Ж harfi",
+      "з": "З harfi",
+      "и": "И harfi",
+      "й": "Й harfi",
+      "к": "К harfi",
+      "л": "Л harfi",
+      "м": "М harfi",
+      "н": "Н harfi",
+      "о": "О harfi",
+      "п": "П harfi",
+      "р": "Р harfi",
+      "с": "С harfi",
+      "т": "Т harfi",
+      "у": "У harfi",
+      "ф": "Ф harfi",
+      "х": "Х harfi",
+      "ц": "Ц harfi",
+      "ч": "Ч harfi",
+      "ш": "Ш harfi",
+      "щ": "Щ harfi",
+      "ъ": "Ъ harfi",
+      "ы": "Ы harfi",
+      "ь": "Ь harfi",
+      "э": "Э harfi",
+      "ю": "Ю harfi",
+      "я": "Я harfi"
     }
   }
 }

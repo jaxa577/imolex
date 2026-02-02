@@ -100,7 +100,8 @@
     "transport": "Transport",
     "vegetables": "Vegetables",
     "wildAnimals": "Wild Animals",
-    "alphabetUzb": "Uzbek Alphabet"
+    "alphabetUzb": "Uzbek Alphabet",
+    "alphabetRu": "Russian Alphabet"
   },
   "settings": {
     "language": "Language",
@@ -364,6 +365,40 @@
       "y": "Letter Y",
       "z": "Letter Z",
       "ch": "Letter CH"
+    },
+    "alphabetRu": {
+      "а": "Letter А",
+      "б": "Letter Б",
+      "в": "Letter В",
+      "г": "Letter Г",
+      "д": "Letter Д",
+      "е": "Letter Е",
+      "ж": "Letter Ж",
+      "з": "Letter З",
+      "и": "Letter И",
+      "й": "Letter Й",
+      "к": "Letter К",
+      "л": "Letter Л",
+      "м": "Letter М",
+      "н": "Letter Н",
+      "о": "Letter О",
+      "п": "Letter П",
+      "р": "Letter Р",
+      "с": "Letter С",
+      "т": "Letter Т",
+      "у": "Letter У",
+      "ф": "Letter Ф",
+      "х": "Letter Х",
+      "ц": "Letter Ц",
+      "ч": "Letter Ч",
+      "ш": "Letter Ш",
+      "щ": "Letter Щ",
+      "ъ": "Letter Ъ",
+      "ы": "Letter Ы",
+      "ь": "Letter Ь",
+      "э": "Letter Э",
+      "ю": "Letter Ю",
+      "я": "Letter Я"
     }
   }
 }
