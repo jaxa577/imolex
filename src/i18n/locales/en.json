@@ -100,8 +100,8 @@
     "transport": "Transport",
     "vegetables": "Vegetables",
     "wildAnimals": "Wild Animals",
-    "alphabetUzb": "Uzbek Alphabet",
-    "alphabetRu": "Russian Alphabet"
+    "alphabetUzb": "Uzbek Dactylic Alphabet",
+    "alphabetRu": "Russian Dactylic Alphabet"
   },
   "settings": {
     "language": "Language",

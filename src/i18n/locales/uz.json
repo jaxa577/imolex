@@ -100,8 +100,8 @@
     "transport": "Transport",
     "vegetables": "Sabzavotlar",
     "wildAnimals": "Yovvoyi hayvonlar",
-    "alphabetUzb": "O'zbek Alifbosi",
-    "alphabetRu": "Rus Alifbosi"
+    "alphabetUzb": "O'zbek Daktil Alifbosi",
+    "alphabetRu": "Rus Daktil Alifbosi"
   },
   "settings": {
     "language": "Til",

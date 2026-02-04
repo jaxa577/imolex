@@ -31,89 +31,90 @@
 </template>
 
 <script setup>
-import { useI18n } from 'vue-i18n'
-import Button from 'primevue/button'
+import { useI18n } from "vue-i18n";
+import Button from "primevue/button";
 
-const { t } = useI18n()
+const { t } = useI18n();
 
 const props = defineProps({
   theme: {
     type: Object,
-    required: true
+    required: true,
   },
   activeItemId: {
     type: String,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 
-defineEmits(['select', 'back'])
+defineEmits(["select", "back"]);
 
 const themeNameMap = {
-  'action-words': 'themes.actionWords',
-  'domestic-animals': 'themes.animals',
-  'body-parts': 'themes.bodyParts',
-  'clothes': 'themes.clothes',
-  'colors': 'themes.colors',
-  'dishes': 'themes.dishes',
-  'family': 'themes.family',
-  'food': 'themes.food',
-  'fruits': 'themes.fruits',
-  'furniture': 'themes.furniture',
-  'household-appliances': 'themes.householdAppliances',
-  'insects': 'themes.insects',
-  'natural-phenomena': 'themes.naturalPhenomena',
-  'occupations': 'themes.occupations',
-  'places': 'themes.places',
-  'school-supplies': 'themes.schoolSupplies',
-  'transports': 'themes.transport',
-  'vegetables': 'themes.vegetables',
-  'wild-animals': 'themes.wildAnimals',
-  'alphabet-uzb': 'themes.alphabetUzb'
-}
+  "action-words": "themes.actionWords",
+  "domestic-animals": "themes.animals",
+  "body-parts": "themes.bodyParts",
+  clothes: "themes.clothes",
+  colors: "themes.colors",
+  dishes: "themes.dishes",
+  family: "themes.family",
+  food: "themes.food",
+  fruits: "themes.fruits",
+  furniture: "themes.furniture",
+  "household-appliances": "themes.householdAppliances",
+  insects: "themes.insects",
+  "natural-phenomena": "themes.naturalPhenomena",
+  occupations: "themes.occupations",
+  places: "themes.places",
+  "school-supplies": "themes.schoolSupplies",
+  transports: "themes.transport",
+  vegetables: "themes.vegetables",
+  "wild-animals": "themes.wildAnimals",
+  "alphabet-uzb": "themes.alphabetUzb",
+};
 
 const getThemeName = (themeId) => {
-  return t(themeNameMap[themeId] || themeId)
-}
+  return t(themeNameMap[themeId] || themeId);
+};
 
 // Mapping for theme IDs to their translation category names
 const themeToItemCategory = {
-  'action-words': 'actionWords',
-  'domestic-animals': 'animals',
-  'body-parts': 'bodyParts',
-  'clothes': 'clothes',
-  'colors': 'colors',
-  'dishes': 'dishes',
-  'family': 'family',
-  'food': 'food',
-  'fruits': 'fruits',
-  'furniture': 'furniture',
-  'household-appliances': 'householdAppliances',
-  'insects': 'insects',
-  'natural-phenomena': 'naturalPhenomena',
-  'occupations': 'occupations',
-  'places': 'places',
-  'school-supplies': 'schoolSupplies',
-  'transports': 'transports',
-  'vegetables': 'vegetables',
-  'wild-animals': 'wildAnimals',
-  'alphabet-uzb': 'alphabetUzb'
-}
+  "action-words": "actionWords",
+  "domestic-animals": "animals",
+  "body-parts": "bodyParts",
+  clothes: "clothes",
+  colors: "colors",
+  dishes: "dishes",
+  family: "family",
+  food: "food",
+  fruits: "fruits",
+  furniture: "furniture",
+  "household-appliances": "householdAppliances",
+  insects: "insects",
+  "natural-phenomena": "naturalPhenomena",
+  occupations: "occupations",
+  places: "places",
+  "school-supplies": "schoolSupplies",
+  transports: "transports",
+  vegetables: "vegetables",
+  "wild-animals": "wildAnimals",
+  "alphabet-uzb": "alphabetUzb",
+  "alphabet-ru": "alphabetRu",
+};
 
 const getItemName = (themeId, itemId) => {
-  const category = themeToItemCategory[themeId]
+  const category = themeToItemCategory[themeId];
   if (category) {
-    const translationKey = `items.${category}.${itemId}`
-    const translated = t(translationKey)
+    const translationKey = `items.${category}.${itemId}`;
+    const translated = t(translationKey);
     // If translation exists and is different from the key, return it
     if (translated !== translationKey) {
-      return translated
+      return translated;
     }
   }
   // Fallback: find the item in theme.items and return its default name
-  const item = props.theme?.items?.find(i => i.id === itemId)
-  return item?.name || itemId
-}
+  const item = props.theme?.items?.find((i) => i.id === itemId);
+  return item?.name || itemId;
+};
 </script>
 
 <style scoped>
