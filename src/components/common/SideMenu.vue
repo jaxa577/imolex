@@ -70,6 +70,7 @@ const themeNameMap = {
   vegetables: "themes.vegetables",
   "wild-animals": "themes.wildAnimals",
   "alphabet-uzb": "themes.alphabetUzb",
+  "alphabet-ru": "themes.alphabetRu",
 };
 
 const getThemeName = (themeId) => {
