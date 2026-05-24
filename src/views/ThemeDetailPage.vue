@@ -61,9 +61,20 @@
           <!-- Item Name -->
           <Transition name="fade" mode="out-in">
             <div class="item-header" :key="activeItem.id">
-              <h1 class="item-name">
-                {{ getItemName(theme.id, activeItem.id) }}
-              </h1>
+              <div class="title-container">
+                <h1 class="item-name">
+                  {{ getItemName(theme.id, activeItem.id) }}
+                </h1>
+                <Button
+                  v-if="activeItem.audio"
+                  icon="pi pi-volume-up"
+                  class="audio-button"
+                  rounded
+                  text
+                  @click="playAudio(activeItem.audio)"
+                  aria-label="Play audio"
+                />
+              </div>
               <p class="item-description">
                 {{ getItemDescription(theme.id, activeItem.id) }}
               </p>
@@ -233,6 +244,13 @@ const selectItem = (itemId) => {
 
 const onImageLoad = () => {
   imageLoading.value = false;
+};
+
+const playAudio = (audioSrc) => {
+  if (audioSrc) {
+    const audio = new Audio(audioSrc);
+    audio.play().catch(e => console.error("Error playing audio:", e));
+  }
 };
 
 const goToPrevious = () => {
@@ -491,12 +509,31 @@ const getSignCaption = (themeId, itemId) => {
   width: 100%;
 }
 
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
 .item-name {
   font-size: 3.5rem;
   font-weight: bold;
   color: #333;
-  margin: 0 0 16px 0;
+  margin: 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.audio-button {
+  font-size: 1.5rem !important;
+  width: 52px !important;
+  height: 52px !important;
+  color: #667eea !important;
+}
+
+.audio-button:hover {
+  background: rgba(102, 126, 234, 0.1) !important;
 }
 
 .item-description {
@@ -724,9 +761,12 @@ const getSignCaption = (themeId, itemId) => {
     gap: 20px;
   }
 
+  .title-container {
+    margin-bottom: 8px;
+  }
+
   .item-name {
     font-size: 1.8rem;
-    margin-bottom: 8px;
   }
 
   .item-description {
