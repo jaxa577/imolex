@@ -22,7 +22,8 @@
     "selectItem": "Выберите элемент из меню",
     "menu": "Меню",
     "signCaption": "Жест: {name}",
-    "learnAbout": "Учимся показывать '{name}'"
+    "learnAbout": "Учимся показывать '{name}'",
+    "playAudio": "Прослушать произношение"
   },
   "games": {
     "title": "Обучающие игры",

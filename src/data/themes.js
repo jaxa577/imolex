@@ -13,6 +13,10 @@ export const themes = [
         image: "/assets/images/themes/action-words/draw.jpg",
         signVideo: "/assets/videos/sign-language/action-words/draw.MP4",
         signGif: "/assets/videos/sign-language/action-words/draw.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/action-words/draw-ru.m4a",
+          uz: "/assets/audios/pronunciations/action-words/draw-uz.m4a",
+        },
         description: "Learn about draw",
       },
       {
@@ -21,6 +25,9 @@ export const themes = [
         image: "/assets/images/themes/action-words/drink.jpg",
         signVideo: "/assets/videos/sign-language/action-words/drink.MP4",
         signGif: "/assets/videos/sign-language/action-words/drink.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/action-words/drink-ru.m4a",
+        },
         description: "Learn about drink",
       },
       {
@@ -29,6 +36,9 @@ export const themes = [
         image: "/assets/images/themes/action-words/eat.jpg",
         signVideo: "/assets/videos/sign-language/action-words/eat.MP4",
         signGif: "/assets/videos/sign-language/action-words/eat.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/action-words/eat-ru.m4a",
+        },
         description: "Learn about eat",
       },
       {
@@ -37,6 +47,10 @@ export const themes = [
         image: "/assets/images/themes/action-words/jump.jpg",
         signVideo: "/assets/videos/sign-language/action-words/jump.MP4",
         signGif: "/assets/videos/sign-language/action-words/jump.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/action-words/jump-ru.m4a",
+          uz: "/assets/audios/pronunciations/action-words/jump-uz.m4a",
+        },
         description: "Learn about jump",
       },
       {
@@ -45,6 +59,10 @@ export const themes = [
         image: "/assets/images/themes/action-words/lie.jpg",
         signVideo: "/assets/videos/sign-language/action-words/lie.MP4",
         signGif: "/assets/videos/sign-language/action-words/lie.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/action-words/lie-ru.m4a",
+          uz: "/assets/audios/pronunciations/action-words/lie-uz.m4a",
+        },
         description: "Learn about lie",
       },
       {
@@ -53,6 +71,10 @@ export const themes = [
         image: "/assets/images/themes/action-words/play.jpg",
         signVideo: "/assets/videos/sign-language/action-words/play.MP4",
         signGif: "/assets/videos/sign-language/action-words/play.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/action-words/play-ru.m4a",
+          uz: "/assets/audios/pronunciations/action-words/play-uz.m4a",
+        },
         description: "Learn about play",
       },
       {
@@ -61,6 +83,10 @@ export const themes = [
         image: "/assets/images/themes/action-words/read.jpg",
         signVideo: "/assets/videos/sign-language/action-words/read.MP4",
         signGif: "/assets/videos/sign-language/action-words/read.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/action-words/read-ru.m4a",
+          uz: "/assets/audios/pronunciations/action-words/read-uz.m4a",
+        },
         description: "Learn about read",
       },
       {
@@ -69,6 +95,10 @@ export const themes = [
         image: "/assets/images/themes/action-words/run.jpg",
         signVideo: "/assets/videos/sign-language/action-words/run.MP4",
         signGif: "/assets/videos/sign-language/action-words/run.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/action-words/run-ru.m4a",
+          uz: "/assets/audios/pronunciations/action-words/run-uz.m4a",
+        },
         description: "Learn about run",
       },
       {
@@ -77,6 +107,10 @@ export const themes = [
         image: "/assets/images/themes/action-words/seat.jpg",
         signVideo: "/assets/videos/sign-language/action-words/seat.MP4",
         signGif: "/assets/videos/sign-language/action-words/seat.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/action-words/seat-ru.m4a",
+          uz: "/assets/audios/pronunciations/action-words/seat-uz.m4a",
+        },
         description: "Learn about seat",
       },
       {
@@ -85,6 +119,10 @@ export const themes = [
         image: "/assets/images/themes/action-words/stand.jpg",
         signVideo: "/assets/videos/sign-language/action-words/stand.MP4",
         signGif: "/assets/videos/sign-language/action-words/stand.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/action-words/stand-ru.m4a",
+          uz: "/assets/audios/pronunciations/action-words/stand-uz.m4a",
+        },
         description: "Learn about stand",
       },
       {
@@ -93,6 +131,10 @@ export const themes = [
         image: "/assets/images/themes/action-words/walk.jpg",
         signVideo: "/assets/videos/sign-language/action-words/walk.MP4",
         signGif: "/assets/videos/sign-language/action-words/walk.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/action-words/walk-ru.m4a",
+          uz: "/assets/audios/pronunciations/action-words/walk-uz.m4a",
+        },
         description: "Learn about walk",
       },
       {
@@ -101,6 +143,10 @@ export const themes = [
         image: "/assets/images/themes/action-words/write.jpg",
         signVideo: "/assets/videos/sign-language/action-words/write.MP4",
         signGif: "/assets/videos/sign-language/action-words/write.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/action-words/write-ru.m4a",
+          uz: "/assets/audios/pronunciations/action-words/write-uz.m4a",
+        },
         description: "Learn about write",
       },
     ],
@@ -188,6 +234,9 @@ export const themes = [
         image: "/assets/images/themes/animals/goat.jpg",
         signVideo: "/assets/videos/sign-language/animals/goat.MP4",
         signGif: "/assets/videos/sign-language/animals/goat.gif",
+        pronunciation: {
+          uz: "/assets/audios/pronunciations/domestic-animals/goat-uz.m4a",
+        },
         description: "Learn about goat",
       },
       {
@@ -213,6 +262,10 @@ export const themes = [
         image: "/assets/images/themes/animals/rabbit.jpg",
         signVideo: "/assets/videos/sign-language/animals/rabbit.MP4",
         signGif: "/assets/videos/sign-language/animals/rabbit.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/domestic-animals/rabbit-ru.m4a",
+          uz: "/assets/audios/pronunciations/domestic-animals/rabbit-uz.m4a",
+        },
         description: "Learn about rabbit",
       },
       {
@@ -247,6 +300,10 @@ export const themes = [
         image: "/assets/images/themes/body-parts/ear.png",
         signVideo: "/assets/videos/sign-language/body-parts/ear.MP4",
         signGif: "/assets/videos/sign-language/body-parts/ear.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/body-parts/ear-ru.m4a",
+          uz: "/assets/audios/pronunciations/body-parts/ear-uz.m4a",
+        },
         description: "Learn about ear",
       },
       {
@@ -255,6 +312,10 @@ export const themes = [
         image: "/assets/images/themes/body-parts/eye.png",
         signVideo: "/assets/videos/sign-language/body-parts/eye.MP4",
         signGif: "/assets/videos/sign-language/body-parts/eye.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/body-parts/eye-ru.m4a",
+          uz: "/assets/audios/pronunciations/body-parts/eye-uz.m4a",
+        },
         description: "Learn about eye",
       },
       {
@@ -263,6 +324,10 @@ export const themes = [
         image: "/assets/images/themes/body-parts/finger.png",
         signVideo: "/assets/videos/sign-language/body-parts/finger.MP4",
         signGif: "/assets/videos/sign-language/body-parts/finger.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/body-parts/finger-ru.m4a",
+          uz: "/assets/audios/pronunciations/body-parts/finger-uz.m4a",
+        },
         description: "Learn about finger",
       },
       {
@@ -271,6 +336,10 @@ export const themes = [
         image: "/assets/images/themes/body-parts/hand.png",
         signVideo: "/assets/videos/sign-language/body-parts/hand.MP4",
         signGif: "/assets/videos/sign-language/body-parts/hand.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/body-parts/hand-ru.m4a",
+          uz: "/assets/audios/pronunciations/body-parts/hand-uz.m4a",
+        },
         description: "Learn about hand",
       },
       {
@@ -279,6 +348,10 @@ export const themes = [
         image: "/assets/images/themes/body-parts/head.png",
         signVideo: "/assets/videos/sign-language/body-parts/head.MP4",
         signGif: "/assets/videos/sign-language/body-parts/head.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/body-parts/head-ru.m4a",
+          uz: "/assets/audios/pronunciations/body-parts/head-uz.m4a",
+        },
         description: "Learn about head",
       },
       {
@@ -287,6 +360,10 @@ export const themes = [
         image: "/assets/images/themes/body-parts/leg.png",
         signVideo: "/assets/videos/sign-language/body-parts/leg.MP4",
         signGif: "/assets/videos/sign-language/body-parts/leg.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/body-parts/leg-ru.m4a",
+          uz: "/assets/audios/pronunciations/body-parts/leg-uz.m4a",
+        },
         description: "Learn about leg",
       },
       {
@@ -295,6 +372,10 @@ export const themes = [
         image: "/assets/images/themes/body-parts/nose.png",
         signVideo: "/assets/videos/sign-language/body-parts/nose.MP4",
         signGif: "/assets/videos/sign-language/body-parts/nose.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/body-parts/nose-ru.m4a",
+          uz: "/assets/audios/pronunciations/body-parts/nose-uz.m4a",
+        },
         description: "Learn about nose",
       },
       {
@@ -303,6 +384,9 @@ export const themes = [
         image: "/assets/images/themes/body-parts/tongue.png",
         signVideo: "/assets/videos/sign-language/body-parts/tongue.MP4",
         signGif: "/assets/videos/sign-language/body-parts/tongue.gif",
+        pronunciation: {
+          uz: "/assets/audios/pronunciations/body-parts/tongue-uz.m4a",
+        },
         description: "Learn about tongue",
       },
     ],
@@ -321,6 +405,9 @@ export const themes = [
         image: "/assets/images/themes/clothes/boots.jpg",
         signVideo: "/assets/videos/sign-language/clothes/boots.MP4",
         signGif: "/assets/videos/sign-language/clothes/boots.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/clothes/boots-ru.m4a",
+        },
         description: "Learn about boots",
       },
       {
@@ -329,6 +416,10 @@ export const themes = [
         image: "/assets/images/themes/clothes/dress.jpg",
         signVideo: "/assets/videos/sign-language/clothes/dress.MP4",
         signGif: "/assets/videos/sign-language/clothes/dress.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/clothes/dress-ru.m4a",
+          uz: "/assets/audios/pronunciations/clothes/dress-uz.m4a",
+        },
         description: "Learn about dress",
       },
       {
@@ -337,6 +428,9 @@ export const themes = [
         image: "/assets/images/themes/clothes/hat.jpg",
         signVideo: "/assets/videos/sign-language/clothes/hat.MP4",
         signGif: "/assets/videos/sign-language/clothes/hat.gif",
+        pronunciation: {
+          uz: "/assets/audios/pronunciations/clothes/hat-uz.m4a",
+        },
         description: "Learn about hat",
       },
       {
@@ -345,6 +439,10 @@ export const themes = [
         image: "/assets/images/themes/clothes/jacket.jpg",
         signVideo: "/assets/videos/sign-language/clothes/jacket.MP4",
         signGif: "/assets/videos/sign-language/clothes/jacket.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/clothes/jacket-ru.m4a",
+          uz: "/assets/audios/pronunciations/clothes/jacket-uz.m4a",
+        },
         description: "Learn about jacket",
       },
       {
@@ -353,6 +451,10 @@ export const themes = [
         image: "/assets/images/themes/clothes/pants.jpg",
         signVideo: "/assets/videos/sign-language/clothes/pants.MP4",
         signGif: "/assets/videos/sign-language/clothes/pants.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/clothes/pants-ru.m4a",
+          uz: "/assets/audios/pronunciations/clothes/pants-uz.m4a",
+        },
         description: "Learn about pants",
       },
       {
@@ -361,6 +463,10 @@ export const themes = [
         image: "/assets/images/themes/clothes/scarf.jpg",
         signVideo: "/assets/videos/sign-language/clothes/scarf.MP4",
         signGif: "/assets/videos/sign-language/clothes/scarf.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/clothes/scarf-ru.m4a",
+          uz: "/assets/audios/pronunciations/clothes/scarf-uz.m4a",
+        },
         description: "Learn about scarf",
       },
       {
@@ -369,6 +475,10 @@ export const themes = [
         image: "/assets/images/themes/clothes/shoes.jpg",
         signVideo: "/assets/videos/sign-language/clothes/shoes.MP4",
         signGif: "/assets/videos/sign-language/clothes/shoes.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/clothes/shoes-ru.m4a",
+          uz: "/assets/audios/pronunciations/clothes/shoes-uz.m4a",
+        },
         description: "Learn about shoes",
       },
       {
@@ -377,6 +487,10 @@ export const themes = [
         image: "/assets/images/themes/clothes/skirt.jpg",
         signVideo: "/assets/videos/sign-language/clothes/skirt.MP4",
         signGif: "/assets/videos/sign-language/clothes/skirt.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/clothes/skirt-ru.m4a",
+          uz: "/assets/audios/pronunciations/clothes/skirt-uz.m4a",
+        },
         description: "Learn about skirt",
       },
       {
@@ -385,6 +499,9 @@ export const themes = [
         image: "/assets/images/themes/clothes/sneakers.jpg",
         signVideo: "/assets/videos/sign-language/clothes/sneakers.MP4",
         signGif: "/assets/videos/sign-language/clothes/sneakers.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/clothes/sneakers-ru.m4a",
+        },
         description: "Learn about sneakers",
       },
       {
@@ -393,6 +510,10 @@ export const themes = [
         image: "/assets/images/themes/clothes/socks.jpg",
         signVideo: "/assets/videos/sign-language/clothes/socks.MP4",
         signGif: "/assets/videos/sign-language/clothes/socks.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/clothes/socks-ru.m4a",
+          uz: "/assets/audios/pronunciations/clothes/socks-uz.m4a",
+        },
         description: "Learn about socks",
       },
       {
@@ -401,6 +522,10 @@ export const themes = [
         image: "/assets/images/themes/clothes/sweater.jpg",
         signVideo: "/assets/videos/sign-language/clothes/sweater.MP4",
         signGif: "/assets/videos/sign-language/clothes/sweater.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/clothes/sweater-ru.m4a",
+          uz: "/assets/audios/pronunciations/clothes/sweater-uz.m4a",
+        },
         description: "Learn about sweater",
       },
       {
@@ -409,6 +534,9 @@ export const themes = [
         image: "/assets/images/themes/clothes/t-shirt.jpg",
         signVideo: "/assets/videos/sign-language/clothes/t-shirt.MP4",
         signGif: "/assets/videos/sign-language/clothes/t-shirt.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/clothes/t-shirt-ru.m4a",
+        },
         description: "Learn about t shirt",
       },
       {
@@ -417,6 +545,10 @@ export const themes = [
         image: "/assets/images/themes/clothes/tank-top.jpg",
         signVideo: "/assets/videos/sign-language/clothes/tank-top.MP4",
         signGif: "/assets/videos/sign-language/clothes/tank-top.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/clothes/tank-top-ru.m4a",
+          uz: "/assets/audios/pronunciations/clothes/tank-top-uz.m4a",
+        },
         description: "Learn about tank top",
       },
     ],
@@ -435,6 +567,10 @@ export const themes = [
         image: "/assets/images/themes/colors/black.jpg",
         signVideo: "/assets/videos/sign-language/colors/black.MP4",
         signGif: "/assets/videos/sign-language/colors/black.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/colors/black-ru.m4a",
+          uz: "/assets/audios/pronunciations/colors/black-uz.m4a",
+        },
         description: "Learn about black",
       },
       {
@@ -443,6 +579,10 @@ export const themes = [
         image: "/assets/images/themes/colors/blue.jpg",
         signVideo: "/assets/videos/sign-language/colors/blue.MP4",
         signGif: "/assets/videos/sign-language/colors/blue.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/colors/blue-ru.m4a",
+          uz: "/assets/audios/pronunciations/colors/blue-uz.m4a",
+        },
         description: "Learn about blue",
       },
       {
@@ -451,6 +591,10 @@ export const themes = [
         image: "/assets/images/themes/colors/brown.jpg",
         signVideo: "/assets/videos/sign-language/colors/brown.MP4",
         signGif: "/assets/videos/sign-language/colors/brown.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/colors/brown-ru.m4a",
+          uz: "/assets/audios/pronunciations/colors/brown-uz.m4a",
+        },
         description: "Learn about brown",
       },
       {
@@ -459,6 +603,10 @@ export const themes = [
         image: "/assets/images/themes/colors/green.jpg",
         signVideo: "/assets/videos/sign-language/colors/green.MP4",
         signGif: "/assets/videos/sign-language/colors/green.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/colors/green-ru.m4a",
+          uz: "/assets/audios/pronunciations/colors/green-uz.m4a",
+        },
         description: "Learn about green",
       },
       {
@@ -467,6 +615,10 @@ export const themes = [
         image: "/assets/images/themes/colors/light-blue.jpg",
         signVideo: "/assets/videos/sign-language/colors/light-blue.MP4",
         signGif: "/assets/videos/sign-language/colors/light-blue.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/colors/light-blue-ru.m4a",
+          uz: "/assets/audios/pronunciations/colors/light-blue-uz.m4a",
+        },
         description: "Learn about light blue",
       },
       {
@@ -475,6 +627,9 @@ export const themes = [
         image: "/assets/images/themes/colors/orange.jpg",
         signVideo: "/assets/videos/sign-language/colors/orange.MP4",
         signGif: "/assets/videos/sign-language/colors/orange.gif",
+        pronunciation: {
+          uz: "/assets/audios/pronunciations/colors/orange-uz.m4a",
+        },
         description: "Learn about orange",
       },
       {
@@ -483,6 +638,10 @@ export const themes = [
         image: "/assets/images/themes/colors/pink.jpg",
         signVideo: "/assets/videos/sign-language/colors/pink.MP4",
         signGif: "/assets/videos/sign-language/colors/pink.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/colors/pink-ru.m4a",
+          uz: "/assets/audios/pronunciations/colors/pink-uz.m4a",
+        },
         description: "Learn about pink",
       },
       {
@@ -491,6 +650,9 @@ export const themes = [
         image: "/assets/images/themes/colors/red.jpg",
         signVideo: "/assets/videos/sign-language/colors/red.MP4",
         signGif: "/assets/videos/sign-language/colors/red.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/colors/red-ru.m4a",
+        },
         description: "Learn about red",
       },
       {
@@ -499,6 +661,10 @@ export const themes = [
         image: "/assets/images/themes/colors/yellow.jpg",
         signVideo: "/assets/videos/sign-language/colors/yellow.MP4",
         signGif: "/assets/videos/sign-language/colors/yellow.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/colors/yellow-ru.m4a",
+          uz: "/assets/audios/pronunciations/colors/yellow-uz.m4a",
+        },
         description: "Learn about yellow",
       },
     ],
@@ -517,6 +683,10 @@ export const themes = [
         image: "/assets/images/themes/fruits/apple.jpg",
         signVideo: "/assets/videos/sign-language/fruits/apple.MP4",
         signGif: "/assets/videos/sign-language/fruits/apple.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/fruits/apple-ru.m4a",
+          uz: "/assets/audios/pronunciations/fruits/apple-uz.m4a",
+        },
         description: "Learn about apple",
       },
       {
@@ -525,6 +695,10 @@ export const themes = [
         image: "/assets/images/themes/fruits/apricot.jpg",
         signVideo: "/assets/videos/sign-language/fruits/apricot.MP4",
         signGif: "/assets/videos/sign-language/fruits/apricot.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/fruits/apricot-ru.m4a",
+          uz: "/assets/audios/pronunciations/fruits/apricot-uz.m4a",
+        },
         description: "Learn about apricot",
       },
       {
@@ -533,6 +707,10 @@ export const themes = [
         image: "/assets/images/themes/fruits/banana.jpg",
         signVideo: "/assets/videos/sign-language/fruits/banana.MP4",
         signGif: "/assets/videos/sign-language/fruits/banana.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/fruits/banana-ru.m4a",
+          uz: "/assets/audios/pronunciations/fruits/banana-uz.m4a",
+        },
         description: "Learn about banana",
       },
       {
@@ -541,6 +719,10 @@ export const themes = [
         image: "/assets/images/themes/fruits/cherry.jpg",
         signVideo: "/assets/videos/sign-language/fruits/cherry.MP4",
         signGif: "/assets/videos/sign-language/fruits/cherry.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/fruits/cherry-ru.m4a",
+          uz: "/assets/audios/pronunciations/fruits/cherry-uz.m4a",
+        },
         description: "Learn about cherry",
       },
       {
@@ -549,6 +731,10 @@ export const themes = [
         image: "/assets/images/themes/fruits/grape.jpg",
         signVideo: "/assets/videos/sign-language/fruits/grape.MP4",
         signGif: "/assets/videos/sign-language/fruits/grape.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/fruits/grape-ru.m4a",
+          uz: "/assets/audios/pronunciations/fruits/grape-uz.m4a",
+        },
         description: "Learn about light blue",
       },
       {
@@ -557,6 +743,10 @@ export const themes = [
         image: "/assets/images/themes/fruits/limon.jpg",
         signVideo: "/assets/videos/sign-language/fruits/limon.MP4",
         signGif: "/assets/videos/sign-language/fruits/limon.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/fruits/limon-ru.m4a",
+          uz: "/assets/audios/pronunciations/fruits/limon-uz.m4a",
+        },
         description: "Learn about limon",
       },
       {
@@ -565,6 +755,10 @@ export const themes = [
         image: "/assets/images/themes/fruits/orange.jpg",
         signVideo: "/assets/videos/sign-language/fruits/orange.MP4",
         signGif: "/assets/videos/sign-language/fruits/orange.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/fruits/orange-ru.m4a",
+          uz: "/assets/audios/pronunciations/fruits/orange-uz.m4a",
+        },
         description: "Learn about orange",
       },
       {
@@ -573,6 +767,10 @@ export const themes = [
         image: "/assets/images/themes/fruits/peach.jpg",
         signVideo: "/assets/videos/sign-language/fruits/peach.MP4",
         signGif: "/assets/videos/sign-language/fruits/peach.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/fruits/peach-ru.m4a",
+          uz: "/assets/audios/pronunciations/fruits/peach-uz.m4a",
+        },
         description: "Learn about peach",
       },
       {
@@ -581,6 +779,10 @@ export const themes = [
         image: "/assets/images/themes/fruits/pear.jpg",
         signVideo: "/assets/videos/sign-language/fruits/pear.MP4",
         signGif: "/assets/videos/sign-language/fruits/pear.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/fruits/pear-ru.m4a",
+          uz: "/assets/audios/pronunciations/fruits/pear-uz.m4a",
+        },
         description: "Learn about pear",
       },
       {
@@ -589,6 +791,9 @@ export const themes = [
         image: "/assets/images/themes/fruits/pomegranate.jpg",
         signVideo: "/assets/videos/sign-language/fruits/pomegranate.MP4",
         signGif: "/assets/videos/sign-language/fruits/pomegranate.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/fruits/pomegranate-ru.m4a",
+        },
         description: "Learn about pomegranate",
       },
       {
@@ -597,6 +802,10 @@ export const themes = [
         image: "/assets/images/themes/fruits/watermelon.jpg",
         signVideo: "/assets/videos/sign-language/fruits/watermelon.MP4",
         signGif: "/assets/videos/sign-language/fruits/watermelon.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/fruits/watermelon-ru.m4a",
+          uz: "/assets/audios/pronunciations/fruits/watermelon-uz.m4a",
+        },
         description: "Learn about watermelon",
       },
     ],
@@ -615,6 +824,10 @@ export const themes = [
         image: "/assets/images/themes/dishes/bowl.jpg",
         signVideo: "/assets/videos/sign-language/dishes/bowl.MP4",
         signGif: "/assets/videos/sign-language/dishes/bowl.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/dishes/bowl-ru.m4a",
+          uz: "/assets/audios/pronunciations/dishes/bowl-uz.m4a",
+        },
         description: "Learn about bowl",
       },
       {
@@ -623,6 +836,10 @@ export const themes = [
         image: "/assets/images/themes/dishes/cauldron.jpg",
         signVideo: "/assets/videos/sign-language/dishes/cauldron.MP4",
         signGif: "/assets/videos/sign-language/dishes/cauldron.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/dishes/cauldron-ru.m4a",
+          uz: "/assets/audios/pronunciations/dishes/cauldron-uz.m4a",
+        },
         description: "Learn about cauldron",
       },
       {
@@ -631,6 +848,9 @@ export const themes = [
         image: "/assets/images/themes/dishes/cup.jpg",
         signVideo: "/assets/videos/sign-language/dishes/cup.MP4",
         signGif: "/assets/videos/sign-language/dishes/cup.gif",
+        pronunciation: {
+          uz: "/assets/audios/pronunciations/dishes/cup-uz.m4a",
+        },
         description: "Learn about cup",
       },
       {
@@ -639,6 +859,10 @@ export const themes = [
         image: "/assets/images/themes/dishes/fork.jpg",
         signVideo: "/assets/videos/sign-language/dishes/fork.MP4",
         signGif: "/assets/videos/sign-language/dishes/fork.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/dishes/fork-ru.m4a",
+          uz: "/assets/audios/pronunciations/dishes/fork-uz.m4a",
+        },
         description: "Learn about fork",
       },
       {
@@ -647,6 +871,10 @@ export const themes = [
         image: "/assets/images/themes/dishes/glass.jpg",
         signVideo: "/assets/videos/sign-language/dishes/glass.MP4",
         signGif: "/assets/videos/sign-language/dishes/glass.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/dishes/glass-ru.m4a",
+          uz: "/assets/audios/pronunciations/dishes/glass-uz.m4a",
+        },
         description: "Learn about glass",
       },
       {
@@ -655,6 +883,10 @@ export const themes = [
         image: "/assets/images/themes/dishes/pan.jpg",
         signVideo: "/assets/videos/sign-language/dishes/pan.MP4",
         signGif: "/assets/videos/sign-language/dishes/pan.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/dishes/pan-ru.m4a",
+          uz: "/assets/audios/pronunciations/dishes/pan-uz.m4a",
+        },
         description: "Learn about pan",
       },
       {
@@ -663,6 +895,9 @@ export const themes = [
         image: "/assets/images/themes/dishes/plate.jpg",
         signVideo: "/assets/videos/sign-language/dishes/plate.MP4",
         signGif: "/assets/videos/sign-language/dishes/plate.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/dishes/plate-ru.m4a",
+        },
         description: "Learn about plate",
       },
       {
@@ -671,6 +906,9 @@ export const themes = [
         image: "/assets/images/themes/dishes/teapot.jpg",
         signVideo: "/assets/videos/sign-language/dishes/spoon.MP4",
         signGif: "/assets/videos/sign-language/dishes/spoon.gif",
+        pronunciation: {
+          uz: "/assets/audios/pronunciations/dishes/spoon-uz.m4a",
+        },
         description: "Learn about spoon",
       },
       {
@@ -679,6 +917,10 @@ export const themes = [
         image: "/assets/images/themes/dishes/knife.jpg",
         signVideo: "/assets/videos/sign-language/dishes/knife.MP4",
         signGif: "/assets/videos/sign-language/dishes/knife.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/dishes/knife-ru.m4a",
+          uz: "/assets/audios/pronunciations/dishes/knife-uz.m4a",
+        },
         description: "Learn about knife",
       },
       {
@@ -687,6 +929,10 @@ export const themes = [
         image: "/assets/images/themes/dishes/kettle.jpg",
         signVideo: "/assets/videos/sign-language/dishes/kettle.MP4",
         signGif: "/assets/videos/sign-language/dishes/teapot.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/dishes/teapot-ru.m4a",
+          uz: "/assets/audios/pronunciations/dishes/teapot-uz.m4a",
+        },
         description: "Learn about teapot",
       },
     ],
@@ -705,6 +951,10 @@ export const themes = [
         image: "/assets/images/themes/family/mother.png",
         signVideo: "/assets/videos/sign-language/family/mother.MP4",
         signGif: "/assets/videos/sign-language/family/mother.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/family/mother-ru.m4a",
+          uz: "/assets/audios/pronunciations/family/mother-uz.m4a",
+        },
         description: "Learn about mother",
       },
       {
@@ -713,6 +963,9 @@ export const themes = [
         image: "/assets/images/themes/family/father.png",
         signVideo: "/assets/videos/sign-language/family/father.MP4",
         signGif: "/assets/videos/sign-language/family/father.gif",
+        pronunciation: {
+          uz: "/assets/audios/pronunciations/family/father-uz.m4a",
+        },
         description: "Learn about father",
       },
       {
@@ -721,6 +974,10 @@ export const themes = [
         image: "/assets/images/themes/family/brother.png",
         signVideo: "/assets/videos/sign-language/family/brother.MP4",
         signGif: "/assets/videos/sign-language/family/brother.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/family/brother-ru.m4a",
+          uz: "/assets/audios/pronunciations/family/brother-uz.m4a",
+        },
         description: "Learn about brother",
       },
       {
@@ -729,6 +986,10 @@ export const themes = [
         image: "/assets/images/themes/family/sister.png",
         signVideo: "/assets/videos/sign-language/family/sister.MP4",
         signGif: "/assets/videos/sign-language/family/sister.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/family/sister-ru.m4a",
+          uz: "/assets/audios/pronunciations/family/sister-uz.m4a",
+        },
         description: "Learn about sister",
       },
       {
@@ -737,6 +998,10 @@ export const themes = [
         image: "/assets/images/themes/family/brother.png",
         signVideo: "/assets/videos/sign-language/family/son.MP4",
         signGif: "/assets/videos/sign-language/family/son.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/family/son-ru.m4a",
+          uz: "/assets/audios/pronunciations/family/son-uz.m4a",
+        },
         description: "Learn about son",
       },
       {
@@ -745,6 +1010,10 @@ export const themes = [
         image: "/assets/images/themes/family/sister.png",
         signVideo: "/assets/videos/sign-language/family/daughter.MP4",
         signGif: "/assets/videos/sign-language/family/daughter.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/family/daughter-ru.m4a",
+          uz: "/assets/audios/pronunciations/family/daughter-uz.m4a",
+        },
         description: "Learn about daughter",
       },
       {
@@ -753,6 +1022,10 @@ export const themes = [
         image: "/assets/images/themes/family/grandmother.png",
         signVideo: "/assets/videos/sign-language/family/grandmother.MP4",
         signGif: "/assets/videos/sign-language/family/grandmother.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/family/grandmother-ru.m4a",
+          uz: "/assets/audios/pronunciations/family/grandmother-uz.m4a",
+        },
         description: "Learn about grandmother",
       },
       {
@@ -787,6 +1060,9 @@ export const themes = [
         image: "/assets/images/themes/food/butter.jpg",
         signVideo: "/assets/videos/sign-language/food/butter.MP4",
         signGif: "/assets/videos/sign-language/food/butter.gif",
+        pronunciation: {
+          uz: "/assets/audios/pronunciations/food/butter-uz.m4a",
+        },
         description: "Learn about butter",
       },
       {
@@ -795,6 +1071,10 @@ export const themes = [
         image: "/assets/images/themes/food/egg.jpg",
         signVideo: "/assets/videos/sign-language/food/egg.MP4",
         signGif: "/assets/videos/sign-language/food/egg.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/food/egg-ru.m4a",
+          uz: "/assets/audios/pronunciations/food/egg-uz.m4a",
+        },
         description: "Learn about egg",
       },
       {
@@ -803,6 +1083,9 @@ export const themes = [
         image: "/assets/images/themes/food/meat.jpg",
         signVideo: "/assets/videos/sign-language/food/meat.MP4",
         signGif: "/assets/videos/sign-language/food/meat.gif",
+        pronunciation: {
+          uz: "/assets/audios/pronunciations/food/meat-uz.m4a",
+        },
         description: "Learn about meat",
       },
       {
@@ -811,6 +1094,9 @@ export const themes = [
         image: "/assets/images/themes/food/milk.jpg",
         signVideo: "/assets/videos/sign-language/food/milk.MP4",
         signGif: "/assets/videos/sign-language/food/milk.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/food/milk-ru.m4a",
+        },
         description: "Learn about milk",
       },
       {
@@ -819,6 +1105,10 @@ export const themes = [
         image: "/assets/images/themes/food/salt.jpg",
         signVideo: "/assets/videos/sign-language/food/salt.MP4",
         signGif: "/assets/videos/sign-language/food/salt.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/food/salt-ru.m4a",
+          uz: "/assets/audios/pronunciations/food/salt-uz.m4a",
+        },
         description: "Learn about salt",
       },
       {
@@ -835,6 +1125,9 @@ export const themes = [
         image: "/assets/images/themes/food/sugar.jpg",
         signVideo: "/assets/videos/sign-language/food/sugar.MP4",
         signGif: "/assets/videos/sign-language/food/sugar.gif",
+        pronunciation: {
+          uz: "/assets/audios/pronunciations/food/sugar-uz.m4a",
+        },
         description: "Learn about sugar",
       },
       {
@@ -843,6 +1136,9 @@ export const themes = [
         image: "/assets/images/themes/food/water.jpg",
         signVideo: "/assets/videos/sign-language/food/water.MP4",
         signGif: "/assets/videos/sign-language/food/water.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/food/water-ru.m4a",
+        },
         description: "Learn about water",
       },
     ],
@@ -869,6 +1165,10 @@ export const themes = [
         image: "/assets/images/themes/furniture/bed.jpg",
         signVideo: "/assets/videos/sign-language/furniture/bed.MP4",
         signGif: "/assets/videos/sign-language/furniture/bed.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/furniture/bed-ru.m4a",
+          uz: "/assets/audios/pronunciations/furniture/bed-uz.m4a",
+        },
         description: "Learn about bed",
       },
       {
@@ -877,6 +1177,10 @@ export const themes = [
         image: "/assets/images/themes/furniture/chair.jpg",
         signVideo: "/assets/videos/sign-language/furniture/chair.MP4",
         signGif: "/assets/videos/sign-language/furniture/chair.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/furniture/chair-ru.m4a",
+          uz: "/assets/audios/pronunciations/furniture/chair-uz.m4a",
+        },
         description: "Learn about chair",
       },
       {
@@ -885,6 +1189,9 @@ export const themes = [
         image: "/assets/images/themes/furniture/mirror.jpg",
         signVideo: "/assets/videos/sign-language/furniture/mirror.MP4",
         signGif: "/assets/videos/sign-language/furniture/mirror.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/furniture/mirror-ru.m4a",
+        },
         description: "Learn about mirror",
       },
       {
@@ -893,6 +1200,10 @@ export const themes = [
         image: "/assets/images/themes/furniture/sofa.jpg",
         signVideo: "/assets/videos/sign-language/furniture/sofa.MP4",
         signGif: "/assets/videos/sign-language/furniture/sofa.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/furniture/sofa-ru.m4a",
+          uz: "/assets/audios/pronunciations/furniture/sofa-uz.m4a",
+        },
         description: "Learn about sofa",
       },
       {
@@ -901,6 +1212,10 @@ export const themes = [
         image: "/assets/images/themes/furniture/table.jpg",
         signVideo: "/assets/videos/sign-language/furniture/table.MP4",
         signGif: "/assets/videos/sign-language/furniture/table.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/furniture/table-ru.m4a",
+          uz: "/assets/audios/pronunciations/furniture/table-uz.m4a",
+        },
         description: "Learn about table",
       },
       {
@@ -909,6 +1224,9 @@ export const themes = [
         image: "/assets/images/themes/furniture/wardrobe.jpg",
         signVideo: "/assets/videos/sign-language/furniture/wardrobe.MP4",
         signGif: "/assets/videos/sign-language/furniture/wardrobe.gif",
+        pronunciation: {
+          uz: "/assets/audios/pronunciations/furniture/wardrobe-uz.m4a",
+        },
         description: "Learn about wardrobe",
       },
     ],
@@ -929,6 +1247,10 @@ export const themes = [
           "/assets/videos/sign-language/household-appliances/computer.MP4",
         signGif:
           "/assets/videos/sign-language/household-appliances/computer.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/household-appliances/computer-ru.m4a",
+          uz: "/assets/audios/pronunciations/household-appliances/computer-uz.m4a",
+        },
         description: "Learn about computer",
       },
       {
@@ -938,6 +1260,10 @@ export const themes = [
         signVideo:
           "/assets/videos/sign-language/household-appliances/fridge.MP4",
         signGif: "/assets/videos/sign-language/household-appliances/fridge.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/household-appliances/fridge-ru.m4a",
+          uz: "/assets/audios/pronunciations/household-appliances/fridge-uz.m4a",
+        },
         description: "Learn about fridge",
       },
       {
@@ -946,6 +1272,10 @@ export const themes = [
         image: "/assets/images/themes/household-appliances/iron.jpg",
         signVideo: "/assets/videos/sign-language/household-appliances/iron.MP4",
         signGif: "/assets/videos/sign-language/household-appliances/iron.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/household-appliances/iron-ru.m4a",
+          uz: "/assets/audios/pronunciations/household-appliances/iron-uz.m4a",
+        },
         description: "Learn about iron",
       },
       {
@@ -955,6 +1285,10 @@ export const themes = [
         signVideo:
           "/assets/videos/sign-language/household-appliances/stove.MP4",
         signGif: "/assets/videos/sign-language/household-appliances/stove.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/household-appliances/stove-ru.m4a",
+          uz: "/assets/audios/pronunciations/household-appliances/stove-uz.m4a",
+        },
         description: "Learn about stove",
       },
       {
@@ -963,6 +1297,10 @@ export const themes = [
         image: "/assets/images/themes/household-appliances/tv.jpg",
         signVideo: "/assets/videos/sign-language/household-appliances/tv.MP4",
         signGif: "/assets/videos/sign-language/household-appliances/tv.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/household-appliances/tv-ru.m4a",
+          uz: "/assets/audios/pronunciations/household-appliances/tv-uz.m4a",
+        },
         description: "Learn about tv",
       },
       {
@@ -973,6 +1311,9 @@ export const themes = [
           "/assets/videos/sign-language/household-appliances/vaccum-cleaner.MP4",
         signGif:
           "/assets/videos/sign-language/household-appliances/vaccum-cleaner.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/household-appliances/vaccum-cleaner-ru.m4a",
+        },
         description: "Learn about vaccum cleaner",
       },
       {
@@ -983,6 +1324,9 @@ export const themes = [
           "/assets/videos/sign-language/household-appliances/washing-machine.MP4",
         signGif:
           "/assets/videos/sign-language/household-appliances/washing-machine.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/household-appliances/washing-machine-ru.m4a",
+        },
         description: "Learn about washing machine",
       },
     ],
@@ -1001,6 +1345,10 @@ export const themes = [
         image: "/assets/images/themes/insects/ant.jpg",
         signVideo: "/assets/videos/sign-language/insects/ant.MP4",
         signGif: "/assets/videos/sign-language/insects/ant.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/insects/ant-ru.m4a",
+          uz: "/assets/audios/pronunciations/insects/ant-uz.m4a",
+        },
         description: "Learn about ant",
       },
       {
@@ -1009,6 +1357,10 @@ export const themes = [
         image: "/assets/images/themes/insects/bee.jpg",
         signVideo: "/assets/videos/sign-language/insects/bee.MP4",
         signGif: "/assets/videos/sign-language/insects/bee.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/insects/bee-ru.m4a",
+          uz: "/assets/audios/pronunciations/insects/bee-uz.m4a",
+        },
         description: "Learn about bee",
       },
       {
@@ -1017,6 +1369,10 @@ export const themes = [
         image: "/assets/images/themes/insects/butterfly.jpg",
         signVideo: "/assets/videos/sign-language/insects/butterfly.MP4",
         signGif: "/assets/videos/sign-language/insects/butterfly.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/insects/butterfly-ru.m4a",
+          uz: "/assets/audios/pronunciations/insects/butterfly-uz.m4a",
+        },
         description: "Learn about butterfly",
       },
       {
@@ -1025,6 +1381,10 @@ export const themes = [
         image: "/assets/images/themes/insects/cockroach.jpg",
         signVideo: "/assets/videos/sign-language/insects/cockroach.MP4",
         signGif: "/assets/videos/sign-language/insects/cockroach.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/insects/cockroach-ru.m4a",
+          uz: "/assets/audios/pronunciations/insects/cockroach-uz.m4a",
+        },
         description: "Learn about cockroach",
       },
       {
@@ -1033,6 +1393,10 @@ export const themes = [
         image: "/assets/images/themes/insects/fly.jpg",
         signVideo: "/assets/videos/sign-language/insects/fly.MP4",
         signGif: "/assets/videos/sign-language/insects/fly.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/insects/fly-ru.m4a",
+          uz: "/assets/audios/pronunciations/insects/fly-uz.m4a",
+        },
         description: "Learn about fly",
       },
       {
@@ -1041,6 +1405,10 @@ export const themes = [
         image: "/assets/images/themes/insects/grasshopper.jpg",
         signVideo: "/assets/videos/sign-language/insects/grasshopper.MP4",
         signGif: "/assets/videos/sign-language/insects/grasshopper.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/insects/grasshopper-ru.m4a",
+          uz: "/assets/audios/pronunciations/insects/grasshopper-uz.m4a",
+        },
         description: "Learn about grasshopper",
       },
       {
@@ -1049,6 +1417,9 @@ export const themes = [
         image: "/assets/images/themes/insects/mosquito.jpg",
         signVideo: "/assets/videos/sign-language/insects/mosquito.MP4",
         signGif: "/assets/videos/sign-language/insects/mosquito.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/insects/mosquito-ru.m4a",
+        },
         description: "Learn about mosquito",
       },
     ],
@@ -1067,6 +1438,10 @@ export const themes = [
         image: "/assets/images/themes/natural-phenomena/cloud.jpg",
         signVideo: "/assets/videos/sign-language/natural-phenomena/cloud.MP4",
         signGif: "/assets/videos/sign-language/natural-phenomena/cloud.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/natural-phenomena/cloud-ru.m4a",
+          uz: "/assets/audios/pronunciations/natural-phenomena/cloud-uz.m4a",
+        },
         description: "Learn about cloud",
       },
       {
@@ -1075,6 +1450,10 @@ export const themes = [
         image: "/assets/images/themes/natural-phenomena/day.png",
         signVideo: "/assets/videos/sign-language/natural-phenomena/day.MP4",
         signGif: "/assets/videos/sign-language/natural-phenomena/day.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/natural-phenomena/day-ru.m4a",
+          uz: "/assets/audios/pronunciations/natural-phenomena/day-uz.m4a",
+        },
         description: "Learn about day",
       },
       {
@@ -1083,6 +1462,10 @@ export const themes = [
         image: "/assets/images/themes/natural-phenomena/night.png",
         signVideo: "/assets/videos/sign-language/natural-phenomena/night.MP4",
         signGif: "/assets/videos/sign-language/natural-phenomena/night.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/natural-phenomena/night-ru.m4a",
+          uz: "/assets/audios/pronunciations/natural-phenomena/night-uz.m4a",
+        },
         description: "Learn about night",
       },
       {
@@ -1091,6 +1474,10 @@ export const themes = [
         image: "/assets/images/themes/natural-phenomena/rain.jpg",
         signVideo: "/assets/videos/sign-language/natural-phenomena/rain.MP4",
         signGif: "/assets/videos/sign-language/natural-phenomena/rain.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/natural-phenomena/rain-ru.m4a",
+          uz: "/assets/audios/pronunciations/natural-phenomena/rain-uz.m4a",
+        },
         description: "Learn about rain",
       },
       {
@@ -1099,6 +1486,10 @@ export const themes = [
         image: "/assets/images/themes/natural-phenomena/snow.jpg",
         signVideo: "/assets/videos/sign-language/natural-phenomena/snow.MP4",
         signGif: "/assets/videos/sign-language/natural-phenomena/snow.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/natural-phenomena/snow-ru.m4a",
+          uz: "/assets/audios/pronunciations/natural-phenomena/snow-uz.m4a",
+        },
         description: "Learn about snow",
       },
       {
@@ -1107,6 +1498,10 @@ export const themes = [
         image: "/assets/images/themes/natural-phenomena/sun.jpg",
         signVideo: "/assets/videos/sign-language/natural-phenomena/sun.MP4",
         signGif: "/assets/videos/sign-language/natural-phenomena/sun.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/natural-phenomena/sun-ru.m4a",
+          uz: "/assets/audios/pronunciations/natural-phenomena/sun-uz.m4a",
+        },
         description: "Learn about sun",
       },
       {
@@ -1115,6 +1510,10 @@ export const themes = [
         image: "/assets/images/themes/natural-phenomena/wind.jpg",
         signVideo: "/assets/videos/sign-language/natural-phenomena/wind.MP4",
         signGif: "/assets/videos/sign-language/natural-phenomena/wind.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/natural-phenomena/wind-ru.m4a",
+          uz: "/assets/audios/pronunciations/natural-phenomena/wind-uz.m4a",
+        },
         description: "Learn about wind",
       },
     ],
@@ -1133,6 +1532,10 @@ export const themes = [
         image: "/assets/images/themes/occupations/builder.jpg",
         signVideo: "/assets/videos/sign-language/occupations/builder.MP4",
         signGif: "/assets/videos/sign-language/occupations/builder.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/occupations/builder-ru.m4a",
+          uz: "/assets/audios/pronunciations/occupations/builder-uz.m4a",
+        },
         description: "Learn about builder",
       },
       {
@@ -1141,6 +1544,10 @@ export const themes = [
         image: "/assets/images/themes/occupations/cook.jpg",
         signVideo: "/assets/videos/sign-language/occupations/cook.MP4",
         signGif: "/assets/videos/sign-language/occupations/cook.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/occupations/cook-ru.m4a",
+          uz: "/assets/audios/pronunciations/occupations/cook-uz.m4a",
+        },
         description: "Learn about cook",
       },
       {
@@ -1149,6 +1556,10 @@ export const themes = [
         image: "/assets/images/themes/occupations/doctor.jpg",
         signVideo: "/assets/videos/sign-language/occupations/doctor.MP4",
         signGif: "/assets/videos/sign-language/occupations/doctor.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/occupations/doctor-ru.m4a",
+          uz: "/assets/audios/pronunciations/occupations/doctor-uz.m4a",
+        },
         description: "Learn about doctor",
       },
       {
@@ -1157,6 +1568,9 @@ export const themes = [
         image: "/assets/images/themes/occupations/driver.jpg",
         signVideo: "/assets/videos/sign-language/occupations/driver.MP4",
         signGif: "/assets/videos/sign-language/occupations/driver.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/occupations/driver-ru.m4a",
+        },
         description: "Learn about driver",
       },
       {
@@ -1165,6 +1579,10 @@ export const themes = [
         image: "/assets/images/themes/occupations/farmer.jpg",
         signVideo: "/assets/videos/sign-language/occupations/farmer.MP4",
         signGif: "/assets/videos/sign-language/occupations/farmer.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/occupations/farmer-ru.m4a",
+          uz: "/assets/audios/pronunciations/occupations/farmer-uz.m4a",
+        },
         description: "Learn about farmer",
       },
       {
@@ -1173,6 +1591,9 @@ export const themes = [
         image: "/assets/images/themes/occupations/firefighter.jpg",
         signVideo: "/assets/videos/sign-language/occupations/firefighter.MP4",
         signGif: "/assets/videos/sign-language/occupations/firefighter.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/occupations/firefighter-ru.m4a",
+        },
         description: "Learn about firefighter",
       },
       {
@@ -1181,6 +1602,10 @@ export const themes = [
         image: "/assets/images/themes/occupations/hairdresser.jpg",
         signVideo: "/assets/videos/sign-language/occupations/hairdresser.MP4",
         signGif: "/assets/videos/sign-language/occupations/hairdresser.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/occupations/hairdresser-ru.m4a",
+          uz: "/assets/audios/pronunciations/occupations/hairdresser-uz.m4a",
+        },
         description: "Learn about hairdresser",
       },
       {
@@ -1189,6 +1614,9 @@ export const themes = [
         image: "/assets/images/themes/occupations/musician.jpg",
         signVideo: "/assets/videos/sign-language/occupations/musician.MP4",
         signGif: "/assets/videos/sign-language/occupations/musician.gif",
+        pronunciation: {
+          uz: "/assets/audios/pronunciations/occupations/musician-uz.m4a",
+        },
         description: "Learn about musician",
       },
       {
@@ -1197,6 +1625,10 @@ export const themes = [
         image: "/assets/images/themes/occupations/painter.jpg",
         signVideo: "/assets/videos/sign-language/occupations/painter.MP4",
         signGif: "/assets/videos/sign-language/occupations/painter.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/occupations/painter-ru.m4a",
+          uz: "/assets/audios/pronunciations/occupations/painter-uz.m4a",
+        },
         description: "Learn about painter",
       },
       {
@@ -1205,6 +1637,10 @@ export const themes = [
         image: "/assets/images/themes/occupations/salesman.jpg",
         signVideo: "/assets/videos/sign-language/occupations/salesman.MP4",
         signGif: "/assets/videos/sign-language/occupations/salesman.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/occupations/salesman-ru.m4a",
+          uz: "/assets/audios/pronunciations/occupations/salesman-uz.m4a",
+        },
         description: "Learn about salesman",
       },
       {
@@ -1213,6 +1649,9 @@ export const themes = [
         image: "/assets/images/themes/occupations/teacher.jpg",
         signVideo: "/assets/videos/sign-language/occupations/teacher.MP4",
         signGif: "/assets/videos/sign-language/occupations/teacher.gif",
+        pronunciation: {
+          uz: "/assets/audios/pronunciations/occupations/teacher-uz.m4a",
+        },
         description: "Learn about teacher",
       },
     ],
@@ -1231,6 +1670,9 @@ export const themes = [
         image: "/assets/images/themes/places/hospital.jpg",
         signVideo: "/assets/videos/sign-language/places/hospital.MP4",
         signGif: "/assets/videos/sign-language/places/hospital.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/places/hospital-ru.m4a",
+        },
         description: "Learn about hospital",
       },
       {
@@ -1239,6 +1681,10 @@ export const themes = [
         image: "/assets/images/themes/places/kindergarten.jpg",
         signVideo: "/assets/videos/sign-language/places/kindergarten.MP4",
         signGif: "/assets/videos/sign-language/places/kindergarten.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/places/kindergarten-ru.m4a",
+          uz: "/assets/audios/pronunciations/places/kindergarten-uz.m4a",
+        },
         description: "Learn about kindergarten",
       },
       {
@@ -1247,6 +1693,10 @@ export const themes = [
         image: "/assets/images/themes/places/pharmacy.jpg",
         signVideo: "/assets/videos/sign-language/places/pharmacy.MP4",
         signGif: "/assets/videos/sign-language/places/pharmacy.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/places/pharmacy-ru.m4a",
+          uz: "/assets/audios/pronunciations/places/pharmacy-uz.m4a",
+        },
         description: "Learn about pharmacy",
       },
       {
@@ -1255,6 +1705,10 @@ export const themes = [
         image: "/assets/images/themes/places/restaurant.jpg",
         signVideo: "/assets/videos/sign-language/places/restaurant.MP4",
         signGif: "/assets/videos/sign-language/places/restaurant.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/places/restaurant-ru.m4a",
+          uz: "/assets/audios/pronunciations/places/restaurant-uz.m4a",
+        },
         description: "Learn about restaurant",
       },
       {
@@ -1263,6 +1717,10 @@ export const themes = [
         image: "/assets/images/themes/places/school.jpg",
         signVideo: "/assets/videos/sign-language/places/school.MP4",
         signGif: "/assets/videos/sign-language/places/school.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/places/school-ru.m4a",
+          uz: "/assets/audios/pronunciations/places/school-uz.m4a",
+        },
         description: "Learn about school",
       },
       {
@@ -1271,6 +1729,10 @@ export const themes = [
         image: "/assets/images/themes/places/store.jpg",
         signVideo: "/assets/videos/sign-language/places/store.MP4",
         signGif: "/assets/videos/sign-language/places/store.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/places/store-ru.m4a",
+          uz: "/assets/audios/pronunciations/places/store-uz.m4a",
+        },
         description: "Learn about store",
       },
       {
@@ -1279,6 +1741,9 @@ export const themes = [
         image: "/assets/images/themes/places/street.jpg",
         signVideo: "/assets/videos/sign-language/places/street.MP4",
         signGif: "/assets/videos/sign-language/places/street.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/places/street-ru.m4a",
+        },
         description: "Learn about street",
       },
     ],
@@ -1297,6 +1762,10 @@ export const themes = [
         image: "/assets/images/themes/school-supplies/album.jpg",
         signVideo: "/assets/videos/sign-language/school-supplies/album.MP4",
         signGif: "/assets/videos/sign-language/school-supplies/album.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/school-supplies/album-ru.m4a",
+          uz: "/assets/audios/pronunciations/school-supplies/album-uz.m4a",
+        },
         description: "Learn about album",
       },
       {
@@ -1305,6 +1774,9 @@ export const themes = [
         image: "/assets/images/themes/school-supplies/backpack.jpg",
         signVideo: "/assets/videos/sign-language/school-supplies/backpack.MP4",
         signGif: "/assets/videos/sign-language/school-supplies/backpack.gif",
+        pronunciation: {
+          uz: "/assets/audios/pronunciations/school-supplies/backpack-uz.m4a",
+        },
         description: "Learn about backpack",
       },
       {
@@ -1313,6 +1785,10 @@ export const themes = [
         image: "/assets/images/themes/school-supplies/book.jpg",
         signVideo: "/assets/videos/sign-language/school-supplies/book.MP4",
         signGif: "/assets/videos/sign-language/school-supplies/book.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/school-supplies/book-ru.m4a",
+          uz: "/assets/audios/pronunciations/school-supplies/book-uz.m4a",
+        },
         description: "Learn about book",
       },
       {
@@ -1321,6 +1797,10 @@ export const themes = [
         image: "/assets/images/themes/school-supplies/brush.jpg",
         signVideo: "/assets/videos/sign-language/school-supplies/brush.MP4",
         signGif: "/assets/videos/sign-language/school-supplies/brush.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/school-supplies/brush-ru.m4a",
+          uz: "/assets/audios/pronunciations/school-supplies/brush-uz.m4a",
+        },
         description: "Learn about brush",
       },
       {
@@ -1331,6 +1811,10 @@ export const themes = [
           "/assets/videos/sign-language/school-supplies/colored-pencils.MP4",
         signGif:
           "/assets/videos/sign-language/school-supplies/colored-pencils.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/school-supplies/colored-pencils-ru.m4a",
+          uz: "/assets/audios/pronunciations/school-supplies/colored-pencils-uz.m4a",
+        },
         description: "Learn about colored pencils",
       },
       {
@@ -1339,6 +1823,9 @@ export const themes = [
         image: "/assets/images/themes/school-supplies/eraser.jpg",
         signVideo: "/assets/videos/sign-language/school-supplies/eraser.MP4",
         signGif: "/assets/videos/sign-language/school-supplies/eraser.gif",
+        pronunciation: {
+          uz: "/assets/audios/pronunciations/school-supplies/eraser-uz.m4a",
+        },
         description: "Learn about eraser",
       },
       {
@@ -1347,6 +1834,10 @@ export const themes = [
         image: "/assets/images/themes/school-supplies/glue.jpg",
         signVideo: "/assets/videos/sign-language/school-supplies/glue.MP4",
         signGif: "/assets/videos/sign-language/school-supplies/glue.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/school-supplies/glue-ru.m4a",
+          uz: "/assets/audios/pronunciations/school-supplies/glue-uz.m4a",
+        },
         description: "Learn about glue",
       },
       {
@@ -1355,6 +1846,10 @@ export const themes = [
         image: "/assets/images/themes/school-supplies/notebook.jpg",
         signVideo: "/assets/videos/sign-language/school-supplies/notebook.MP4",
         signGif: "/assets/videos/sign-language/school-supplies/notebook.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/school-supplies/notebook-ru.m4a",
+          uz: "/assets/audios/pronunciations/school-supplies/notebook-uz.m4a",
+        },
         description: "Learn about notebook",
       },
       {
@@ -1363,6 +1858,10 @@ export const themes = [
         image: "/assets/images/themes/school-supplies/paints.jpg",
         signVideo: "/assets/videos/sign-language/school-supplies/paints.MP4",
         signGif: "/assets/videos/sign-language/school-supplies/paints.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/school-supplies/paints-ru.m4a",
+          uz: "/assets/audios/pronunciations/school-supplies/paints-uz.m4a",
+        },
         description: "Learn about paints",
       },
       {
@@ -1371,6 +1870,10 @@ export const themes = [
         image: "/assets/images/themes/school-supplies/pen.jpg",
         signVideo: "/assets/videos/sign-language/school-supplies/pen.MP4",
         signGif: "/assets/videos/sign-language/school-supplies/pen.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/school-supplies/pen-ru.m4a",
+          uz: "/assets/audios/pronunciations/school-supplies/pen-uz.m4a",
+        },
         description: "Learn about pen",
       },
       {
@@ -1380,6 +1883,10 @@ export const themes = [
         signVideo:
           "/assets/videos/sign-language/school-supplies/pencil-case.MP4",
         signGif: "/assets/videos/sign-language/school-supplies/pencil-case.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/school-supplies/pencil-case-ru.m4a",
+          uz: "/assets/audios/pronunciations/school-supplies/pencil-case-uz.m4a",
+        },
         description: "Learn about pencil case",
       },
       {
@@ -1388,6 +1895,10 @@ export const themes = [
         image: "/assets/images/themes/school-supplies/pencil.jpg",
         signVideo: "/assets/videos/sign-language/school-supplies/pencil.MP4",
         signGif: "/assets/videos/sign-language/school-supplies/pencil.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/school-supplies/pencil-ru.m4a",
+          uz: "/assets/audios/pronunciations/school-supplies/pencil-uz.m4a",
+        },
         description: "Learn about pencil",
       },
       {
@@ -1397,6 +1908,9 @@ export const themes = [
         signVideo:
           "/assets/videos/sign-language/school-supplies/plasticine.MP4",
         signGif: "/assets/videos/sign-language/school-supplies/plasticine.gif",
+        pronunciation: {
+          uz: "/assets/audios/pronunciations/school-supplies/plasticine-uz.m4a",
+        },
         description: "Learn about plasticine",
       },
       {
@@ -1405,6 +1919,9 @@ export const themes = [
         image: "/assets/images/themes/school-supplies/ruler.jpg",
         signVideo: "/assets/videos/sign-language/school-supplies/ruler.MP4",
         signGif: "/assets/videos/sign-language/school-supplies/ruler.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/school-supplies/ruler-ru.m4a",
+        },
         description: "Learn about ruler",
       },
       {
@@ -1413,6 +1930,10 @@ export const themes = [
         image: "/assets/images/themes/school-supplies/scissors.jpg",
         signVideo: "/assets/videos/sign-language/school-supplies/scissors.MP4",
         signGif: "/assets/videos/sign-language/school-supplies/scissors.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/school-supplies/scissors-ru.m4a",
+          uz: "/assets/audios/pronunciations/school-supplies/scissors-uz.m4a",
+        },
         description: "Learn about scissors",
       },
     ],
@@ -1431,6 +1952,10 @@ export const themes = [
         image: "/assets/images/themes/transports/bicycle.jpg",
         signVideo: "/assets/videos/sign-language/transports/bicycle.MP4",
         signGif: "/assets/videos/sign-language/transports/bicycle.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/transports/bicycle-ru.m4a",
+          uz: "/assets/audios/pronunciations/transports/bicycle-uz.m4a",
+        },
         description: "Learn about bicycle",
       },
       {
@@ -1439,6 +1964,10 @@ export const themes = [
         image: "/assets/images/themes/transports/bus.jpg",
         signVideo: "/assets/videos/sign-language/transports/bus.MP4",
         signGif: "/assets/videos/sign-language/transports/bus.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/transports/bus-ru.m4a",
+          uz: "/assets/audios/pronunciations/transports/bus-uz.m4a",
+        },
         description: "Learn about bus",
       },
       {
@@ -1447,6 +1976,10 @@ export const themes = [
         image: "/assets/images/themes/transports/car.jpg",
         signVideo: "/assets/videos/sign-language/transports/car.MP4",
         signGif: "/assets/videos/sign-language/transports/car.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/transports/car-ru.m4a",
+          uz: "/assets/audios/pronunciations/transports/car-uz.m4a",
+        },
         description: "Learn about car",
       },
       {
@@ -1455,6 +1988,10 @@ export const themes = [
         image: "/assets/images/themes/transports/helicopter.jpg",
         signVideo: "/assets/videos/sign-language/transports/helicopter.MP4",
         signGif: "/assets/videos/sign-language/transports/helicopter.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/transports/helicopter-ru.m4a",
+          uz: "/assets/audios/pronunciations/transports/helicopter-uz.m4a",
+        },
         description: "Learn about helicopter",
       },
       {
@@ -1463,6 +2000,10 @@ export const themes = [
         image: "/assets/images/themes/transports/motorbike.jpg",
         signVideo: "/assets/videos/sign-language/transports/motorbike.MP4",
         signGif: "/assets/videos/sign-language/transports/motorbike.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/transports/motorbike-ru.m4a",
+          uz: "/assets/audios/pronunciations/transports/motorbike-uz.m4a",
+        },
         description: "Learn about motorbike",
       },
       {
@@ -1471,6 +2012,10 @@ export const themes = [
         image: "/assets/images/themes/transports/plane.jpg",
         signVideo: "/assets/videos/sign-language/transports/plane.MP4",
         signGif: "/assets/videos/sign-language/transports/plane.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/transports/plane-ru.m4a",
+          uz: "/assets/audios/pronunciations/transports/plane-uz.m4a",
+        },
         description: "Learn about plane",
       },
       {
@@ -1479,6 +2024,10 @@ export const themes = [
         image: "/assets/images/themes/transports/ship.jpg",
         signVideo: "/assets/videos/sign-language/transports/ship.MP4",
         signGif: "/assets/videos/sign-language/transports/ship.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/transports/ship-ru.m4a",
+          uz: "/assets/audios/pronunciations/transports/ship-uz.m4a",
+        },
         description: "Learn about ship",
       },
       {
@@ -1487,6 +2036,10 @@ export const themes = [
         image: "/assets/images/themes/transports/tractor.jpg",
         signVideo: "/assets/videos/sign-language/transports/tractor.MP4",
         signGif: "/assets/videos/sign-language/transports/tractor.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/transports/tractor-ru.m4a",
+          uz: "/assets/audios/pronunciations/transports/tractor-uz.m4a",
+        },
         description: "Learn about tractor",
       },
       {
@@ -1495,6 +2048,9 @@ export const themes = [
         image: "/assets/images/themes/transports/train.jpg",
         signVideo: "/assets/videos/sign-language/transports/train.MP4",
         signGif: "/assets/videos/sign-language/transports/train.gif",
+        pronunciation: {
+          uz: "/assets/audios/pronunciations/transports/train-uz.m4a",
+        },
         description: "Learn about train",
       },
       {
@@ -1503,6 +2059,10 @@ export const themes = [
         image: "/assets/images/themes/transports/truck.jpg",
         signVideo: "/assets/videos/sign-language/transports/truck.MP4",
         signGif: "/assets/videos/sign-language/transports/truck.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/transports/truck-ru.m4a",
+          uz: "/assets/audios/pronunciations/transports/truck-uz.m4a",
+        },
         description: "Learn about truck",
       },
     ],
@@ -1521,6 +2081,10 @@ export const themes = [
         image: "/assets/images/themes/vegetables/cabbage.jpg",
         signVideo: "/assets/videos/sign-language/vegetables/cabbage.MP4",
         signGif: "/assets/videos/sign-language/vegetables/cabbage.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/vegetables/cabbage-ru.m4a",
+          uz: "/assets/audios/pronunciations/vegetables/cabbage-uz.m4a",
+        },
         description: "Learn about cabbage",
       },
       {
@@ -1529,6 +2093,10 @@ export const themes = [
         image: "/assets/images/themes/vegetables/carrot.jpg",
         signVideo: "/assets/videos/sign-language/vegetables/carrot.MP4",
         signGif: "/assets/videos/sign-language/vegetables/carrot.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/vegetables/carrot-ru.m4a",
+          uz: "/assets/audios/pronunciations/vegetables/carrot-uz.m4a",
+        },
         description: "Learn about carrot",
       },
       {
@@ -1537,6 +2105,10 @@ export const themes = [
         image: "/assets/images/themes/vegetables/cucumber.jpg",
         signVideo: "/assets/videos/sign-language/vegetables/cucumber.MP4",
         signGif: "/assets/videos/sign-language/vegetables/cucumber.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/vegetables/cucumber-ru.m4a",
+          uz: "/assets/audios/pronunciations/vegetables/cucumber-uz.m4a",
+        },
         description: "Learn about cucumber",
       },
       {
@@ -1545,6 +2117,10 @@ export const themes = [
         image: "/assets/images/themes/vegetables/eggplant.jpg",
         signVideo: "/assets/videos/sign-language/vegetables/eggplant.MP4",
         signGif: "/assets/videos/sign-language/vegetables/eggplant.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/vegetables/eggplant-ru.m4a",
+          uz: "/assets/audios/pronunciations/vegetables/eggplant-uz.m4a",
+        },
         description: "Learn about eggplant",
       },
       {
@@ -1553,6 +2129,10 @@ export const themes = [
         image: "/assets/images/themes/vegetables/garlic.jpg",
         signVideo: "/assets/videos/sign-language/vegetables/garlic.MP4",
         signGif: "/assets/videos/sign-language/vegetables/garlic.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/vegetables/garlic-ru.m4a",
+          uz: "/assets/audios/pronunciations/vegetables/garlic-uz.m4a",
+        },
         description: "Learn about garlic",
       },
       {
@@ -1561,6 +2141,9 @@ export const themes = [
         image: "/assets/images/themes/vegetables/onion.jpg",
         signVideo: "/assets/videos/sign-language/vegetables/onion.MP4",
         signGif: "/assets/videos/sign-language/vegetables/onion.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/vegetables/onion-ru.m4a",
+        },
         description: "Learn about onion",
       },
       {
@@ -1569,6 +2152,10 @@ export const themes = [
         image: "/assets/images/themes/vegetables/pepper.jpg",
         signVideo: "/assets/videos/sign-language/vegetables/pepper.MP4",
         signGif: "/assets/videos/sign-language/vegetables/pepper.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/vegetables/pepper-ru.m4a",
+          uz: "/assets/audios/pronunciations/vegetables/pepper-uz.m4a",
+        },
         description: "Learn about pepper",
       },
       {
@@ -1577,6 +2164,9 @@ export const themes = [
         image: "/assets/images/themes/vegetables/potato.jpg",
         signVideo: "/assets/videos/sign-language/vegetables/potato.MP4",
         signGif: "/assets/videos/sign-language/vegetables/potato.gif",
+        pronunciation: {
+          uz: "/assets/audios/pronunciations/vegetables/potato-uz.m4a",
+        },
         description: "Learn about potato",
       },
       {
@@ -1585,6 +2175,10 @@ export const themes = [
         image: "/assets/images/themes/vegetables/pumpkin.jpg",
         signVideo: "/assets/videos/sign-language/vegetables/pumpkin.MP4",
         signGif: "/assets/videos/sign-language/vegetables/pumpkin.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/vegetables/pumpkin-ru.m4a",
+          uz: "/assets/audios/pronunciations/vegetables/pumpkin-uz.m4a",
+        },
         description: "Learn about pumpkin",
       },
       {
@@ -1593,6 +2187,10 @@ export const themes = [
         image: "/assets/images/themes/vegetables/tomato.jpg",
         signVideo: "/assets/videos/sign-language/vegetables/tomato.MP4",
         signGif: "/assets/videos/sign-language/vegetables/tomato.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/vegetables/tomato-ru.m4a",
+          uz: "/assets/audios/pronunciations/vegetables/tomato-uz.m4a",
+        },
         description: "Learn about tomato",
       },
     ],
@@ -1611,6 +2209,10 @@ export const themes = [
         image: "/assets/images/themes/wild-animals/bear.jpg",
         signVideo: "/assets/videos/sign-language/wild-animals/bear.MP4",
         signGif: "/assets/videos/sign-language/wild-animals/bear.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/wild-animals/bear-ru.m4a",
+          uz: "/assets/audios/pronunciations/wild-animals/bear-uz.m4a",
+        },
         description: "Learn about bear",
       },
       {
@@ -1619,6 +2221,10 @@ export const themes = [
         image: "/assets/images/themes/wild-animals/crocodile.jpg",
         signVideo: "/assets/videos/sign-language/wild-animals/crocodile.MP4",
         signGif: "/assets/videos/sign-language/wild-animals/crocodile.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/wild-animals/crocodile-ru.m4a",
+          uz: "/assets/audios/pronunciations/wild-animals/crocodile-uz.m4a",
+        },
         description: "Learn about crocodile",
       },
       {
@@ -1627,6 +2233,10 @@ export const themes = [
         image: "/assets/images/themes/wild-animals/elephant.jpg",
         signVideo: "/assets/videos/sign-language/wild-animals/elephant.MP4",
         signGif: "/assets/videos/sign-language/wild-animals/elephant.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/wild-animals/elephant-ru.m4a",
+          uz: "/assets/audios/pronunciations/wild-animals/elephant-uz.m4a",
+        },
         description: "Learn about elephant",
       },
       {
@@ -1635,6 +2245,10 @@ export const themes = [
         image: "/assets/images/themes/wild-animals/fox.jpg",
         signVideo: "/assets/videos/sign-language/wild-animals/fox.MP4",
         signGif: "/assets/videos/sign-language/wild-animals/fox.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/wild-animals/fox-ru.m4a",
+          uz: "/assets/audios/pronunciations/wild-animals/fox-uz.m4a",
+        },
         description: "Learn about fox",
       },
       {
@@ -1643,6 +2257,10 @@ export const themes = [
         image: "/assets/images/themes/wild-animals/giraffe.jpg",
         signVideo: "/assets/videos/sign-language/wild-animals/giraffe.MP4",
         signGif: "/assets/videos/sign-language/wild-animals/giraffe.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/wild-animals/giraffe-ru.m4a",
+          uz: "/assets/audios/pronunciations/wild-animals/giraffe-uz.m4a",
+        },
         description: "Learn about giraffe",
       },
       {
@@ -1651,6 +2269,10 @@ export const themes = [
         image: "/assets/images/themes/wild-animals/hippopotamus.jpg",
         signVideo: "/assets/videos/sign-language/wild-animals/hippopotamus.MP4",
         signGif: "/assets/videos/sign-language/wild-animals/hippopotamus.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/wild-animals/hippopotamus-ru.m4a",
+          uz: "/assets/audios/pronunciations/wild-animals/hippopotamus-uz.m4a",
+        },
         description: "Learn about hippopotamus",
       },
       {
@@ -1659,6 +2281,10 @@ export const themes = [
         image: "/assets/images/themes/wild-animals/lion.jpg",
         signVideo: "/assets/videos/sign-language/wild-animals/lion.MP4",
         signGif: "/assets/videos/sign-language/wild-animals/lion.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/wild-animals/lion-ru.m4a",
+          uz: "/assets/audios/pronunciations/wild-animals/lion-uz.m4a",
+        },
         description: "Learn about lion",
       },
       {
@@ -1667,6 +2293,10 @@ export const themes = [
         image: "/assets/images/themes/wild-animals/monkey.jpg",
         signVideo: "/assets/videos/sign-language/wild-animals/monkey.MP4",
         signGif: "/assets/videos/sign-language/wild-animals/monkey.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/wild-animals/monkey-ru.m4a",
+          uz: "/assets/audios/pronunciations/wild-animals/monkey-uz.m4a",
+        },
         description: "Learn about monkey",
       },
       {
@@ -1675,6 +2305,10 @@ export const themes = [
         image: "/assets/images/themes/wild-animals/rabbit.jpg",
         signVideo: "/assets/videos/sign-language/wild-animals/rabbit.MP4",
         signGif: "/assets/videos/sign-language/wild-animals/rabbit.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/wild-animals/rabbit-ru.m4a",
+          uz: "/assets/audios/pronunciations/wild-animals/rabbit-uz.m4a",
+        },
         description: "Learn about rabbit",
       },
       {
@@ -1683,6 +2317,10 @@ export const themes = [
         image: "/assets/images/themes/wild-animals/tiger.jpg",
         signVideo: "/assets/videos/sign-language/wild-animals/tiger.MP4",
         signGif: "/assets/videos/sign-language/wild-animals/tiger.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/wild-animals/tiger-ru.m4a",
+          uz: "/assets/audios/pronunciations/wild-animals/tiger-uz.m4a",
+        },
         description: "Learn about tiger",
       },
       {
@@ -1691,6 +2329,10 @@ export const themes = [
         image: "/assets/images/themes/wild-animals/wolf.jpg",
         signVideo: "/assets/videos/sign-language/wild-animals/wolf.MP4",
         signGif: "/assets/videos/sign-language/wild-animals/wolf.gif",
+        pronunciation: {
+          ru: "/assets/audios/pronunciations/wild-animals/wolf-ru.m4a",
+          uz: "/assets/audios/pronunciations/wild-animals/wolf-uz.m4a",
+        },
         description: "Learn about wolf",
       },
     ],

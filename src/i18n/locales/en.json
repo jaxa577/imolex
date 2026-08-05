@@ -22,7 +22,8 @@
     "selectItem": "Select an item from the menu",
     "menu": "Menu",
     "signCaption": "Sign: {name}",
-    "learnAbout": "Learn to sign '{name}'"
+    "learnAbout": "Learn to sign '{name}'",
+    "playAudio": "Play pronunciation"
   },
   "games": {
     "title": "Learning Games",

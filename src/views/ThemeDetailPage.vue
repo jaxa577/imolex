@@ -66,13 +66,13 @@
                   {{ getItemName(theme.id, activeItem.id) }}
                 </h1>
                 <Button
-                  v-if="activeItem.audio"
+                  v-if="activeAudio"
                   icon="pi pi-volume-up"
                   class="audio-button"
                   rounded
                   text
-                  @click="playAudio(activeItem.audio)"
-                  aria-label="Play audio"
+                  @click="playAudio(activeAudio)"
+                  :aria-label="$t('theme.playAudio')"
                 />
               </div>
               <p class="item-description">
@@ -169,7 +169,7 @@ import { getThemeById } from "@/data/themes";
 
 const route = useRoute();
 const router = useRouter();
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const theme = ref(null);
 const activeItemId = ref("");
@@ -205,6 +205,12 @@ watch(
 // Active item
 const activeItem = computed(() => {
   return theme.value?.items.find((item) => item.id === activeItemId.value);
+});
+
+// Pronunciation for the active UI language, falling back to the item's own
+// audio (animal sounds). Nothing is played when the language has no recording.
+const activeAudio = computed(() => {
+  return activeItem.value?.pronunciation?.[locale.value] ?? activeItem.value?.audio ?? null;
 });
 
 // Current index

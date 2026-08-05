@@ -22,7 +22,8 @@
     "selectItem": "Menyudan elementni tanlang",
     "menu": "Menyu",
     "signCaption": "Imo-ishora: {name}",
-    "learnAbout": "'{name}' imo-ishorasini o'rganing"
+    "learnAbout": "'{name}' imo-ishorasini o'rganing",
+    "playAudio": "Talaffuzni eshitish"
   },
   "games": {
     "title": "O'quv o'yinlari",
