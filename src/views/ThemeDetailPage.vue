@@ -207,10 +207,18 @@ const activeItem = computed(() => {
   return theme.value?.items.find((item) => item.id === activeItemId.value);
 });
 
-// Pronunciation for the active UI language, falling back to the item's own
-// audio (animal sounds). Nothing is played when the language has no recording.
+// Recordings only exist in the content languages (uz, ru). English is a UI
+// language with no recordings of its own, so it borrows Uzbek. We never
+// substitute uz for ru or vice versa — that would play the wrong language.
+const audioLocale = { en: "uz" };
+
+// Pronunciation for the active UI language, or null when it has no recording
+// (the speaker button is hidden rather than playing another language).
 const activeAudio = computed(() => {
-  return activeItem.value?.pronunciation?.[locale.value] ?? activeItem.value?.audio ?? null;
+  const pronunciation = activeItem.value?.pronunciation;
+  if (!pronunciation) return null;
+  const lang = locale.value;
+  return pronunciation[lang] ?? pronunciation[audioLocale[lang]] ?? null;
 });
 
 // Current index
