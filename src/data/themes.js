@@ -27,6 +27,7 @@ export const themes = [
         signGif: "/assets/videos/sign-language/action-words/drink.gif",
         pronunciation: {
           ru: "/assets/audios/pronunciations/action-words/drink-ru.m4a",
+          uz: "/assets/audios/pronunciations/action-words/drink-uz.m4a",
         },
         description: "Learn about drink",
       },
@@ -38,6 +39,7 @@ export const themes = [
         signGif: "/assets/videos/sign-language/action-words/eat.gif",
         pronunciation: {
           ru: "/assets/audios/pronunciations/action-words/eat-ru.m4a",
+          uz: "/assets/audios/pronunciations/action-words/eat-uz.m4a",
         },
         description: "Learn about eat",
       },
@@ -167,6 +169,7 @@ export const themes = [
         signGif: "/assets/videos/sign-language/animals/cat.gif",
         pronunciation: {
           ru: "/assets/audios/pronunciations/domestic-animals/cat-ru.m4a",
+          uz: "/assets/audios/pronunciations/domestic-animals/cat-uz.m4a",
         },
         description: "Learn about cat",
       },
@@ -178,6 +181,7 @@ export const themes = [
         signGif: "/assets/videos/sign-language/animals/camel.gif",
         pronunciation: {
           ru: "/assets/audios/pronunciations/domestic-animals/camel-ru.m4a",
+          uz: "/assets/audios/pronunciations/domestic-animals/camel-uz.m4a",
         },
         description: "Learn about camel",
       },
@@ -189,6 +193,7 @@ export const themes = [
         signGif: "/assets/videos/sign-language/animals/chicken.gif",
         pronunciation: {
           ru: "/assets/audios/pronunciations/domestic-animals/chicken-ru.m4a",
+          uz: "/assets/audios/pronunciations/domestic-animals/chicken-uz.m4a",
         },
         description: "Learn about chicken",
       },
@@ -200,6 +205,7 @@ export const themes = [
         signGif: "/assets/videos/sign-language/animals/cock.gif",
         pronunciation: {
           ru: "/assets/audios/pronunciations/domestic-animals/cock-ru.m4a",
+          uz: "/assets/audios/pronunciations/domestic-animals/cock-uz.m4a",
         },
         description: "Learn about cock",
       },
@@ -211,6 +217,7 @@ export const themes = [
         signGif: "/assets/videos/sign-language/animals/cow.gif",
         pronunciation: {
           ru: "/assets/audios/pronunciations/domestic-animals/cow-ru.m4a",
+          uz: "/assets/audios/pronunciations/domestic-animals/cow-uz.m4a",
         },
         description: "Learn about cow",
       },
@@ -282,6 +289,7 @@ export const themes = [
         signGif: "/assets/videos/sign-language/animals/horse.gif",
         pronunciation: {
           ru: "/assets/audios/pronunciations/domestic-animals/horse-ru.m4a",
+          uz: "/assets/audios/pronunciations/domestic-animals/horse-uz.m4a",
         },
         description: "Learn about horse",
       },
